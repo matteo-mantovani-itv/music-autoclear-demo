@@ -1,0 +1,7 @@
+@-moz-document url-prefix() {
+  input.form-control,select.form-control {
+        padding-top:3px;
+        padding-bottom:3px;
+  }
+  fieldset { display: table-cell; }
+}

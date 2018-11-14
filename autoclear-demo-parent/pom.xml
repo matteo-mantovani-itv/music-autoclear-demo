@@ -1,0 +1,305 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.itv.autoclear.demo</groupId>
+    <artifactId>autoclear-demo-parent</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+
+    <name>autoclear-demo-parent</name>
+    <description>
+        Parent module for the AutoClear Music system.
+        Defines versions of libraries/dependencies and common settings used across modules.
+    </description>
+
+    <modules>
+        <module>../autoclear-demo-backend</module>
+        <module>../autoclear-demo-frontend</module>
+    </modules>
+
+    <properties>
+        <java.version>1.8</java.version>
+
+        <java.tmp.dir_args></java.tmp.dir_args>
+
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <jenkins.buildnumber>DEV</jenkins.buildnumber>
+        <build.timestamp>${maven.build.timestamp}</build.timestamp>
+        <jar.finalName>${project.artifactId}-${project.version}</jar.finalName>
+
+        <maven.build.timestamp.format>dd/MM/yyyy HH:mm</maven.build.timestamp.format>
+        <!-- Modules with a main class should add a value to this property -->
+        <autoclear.application.mainClass/>
+
+        <dropwizard.version>1.3.5</dropwizard.version>
+        <!--<dropwizard.version>1.3.5</dropwizard.version>-->
+
+        <jackson.version>2.9.6</jackson.version>
+        <!--<jackson.version>2.9.7</jackson.version>-->
+
+        <rabbitmq.version>3.5.7</rabbitmq.version>
+
+        <apache.commons.lang.version>3.7</apache.commons.lang.version>
+        <commons.io.version>2.6</commons.io.version>
+        <commons.net.version>3.6</commons.net.version>
+        <junit.version>4.12</junit.version>
+        <mockito.version>2.13.0</mockito.version>
+        <assertj.version>3.9.0</assertj.version>
+        <lombok.version>1.16.20</lombok.version>
+        <version-maven-plugin.version>2.2</version-maven-plugin.version>
+        <versions-maven-plugin.version>2.3</versions-maven-plugin.version>
+        <maven-jar-plugin.version>2.5</maven-jar-plugin.version>
+        <buildnumber-maven-plugin.version>1.4</buildnumber-maven-plugin.version>
+        <maven-compiler-plugin.version>3.7.0</maven-compiler-plugin.version>
+        <com.javaslang.version>1.2.3</com.javaslang.version>
+        <javax.validation.version>2.0.1.Final</javax.validation.version>
+        <dropwizard.gelf.version>1.2.0-1</dropwizard.gelf.version>
+        <hibernate.core.version>5.2.12.Final</hibernate.core.version>
+        <net.sf.jsefa.version>1.1.1.RELEASE</net.sf.jsefa.version>
+        <jcabi-manifests.version>1.1</jcabi-manifests.version>
+        <snakeyaml.version>1.19</snakeyaml.version>
+        <guice.version>4.1.0</guice.version>
+        <dropwizard.graphite.version>3.2.5</dropwizard.graphite.version>
+        <dropwizard.swagger.version>1.2.2-2</dropwizard.swagger.version>
+        <javax.annotation.version>1.3.1</javax.annotation.version>
+        <mock.ftp.server.version>2.7.1</mock.ftp.server.version>
+    </properties>
+
+    <build>
+        <plugins>
+            <plugin>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>${maven-compiler-plugin.version}</version>
+                <configuration>
+                    <source>${java.version}</source>
+                    <target>${java.version}</target>
+                    <useIncrementalCompilation>false</useIncrementalCompilation>
+                </configuration>
+            </plugin>
+            <plugin>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>${maven-jar-plugin.version}</version>
+                <configuration>
+                    <archive>
+                        <manifest>
+                            <addDefaultImplementationEntries>true</addDefaultImplementationEntries>
+                        </manifest>
+                        <manifestEntries>
+                            <Talpay-Version>${project.version}</Talpay-Version>
+                            <SCM-Revision>${buildNumber}</SCM-Revision>
+                            <Build-Number>${jenkins.buildnumber}</Build-Number>
+                            <Build-Timestamp>${build.timestamp}</Build-Timestamp>
+                        </manifestEntries>
+                    </archive>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>maven-version-plugin</artifactId>
+                <version>${version-maven-plugin.version}</version>
+            </plugin>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>versions-maven-plugin</artifactId>
+                <version>${versions-maven-plugin.version}</version>
+            </plugin>
+        </plugins>
+    </build>
+
+    <reporting>
+        <plugins>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>versions-maven-plugin</artifactId>
+                <version>${versions-maven-plugin.version}</version>
+            </plugin>
+        </plugins>
+    </reporting>
+
+    <repositories></repositories>
+
+    <pluginRepositories></pluginRepositories>
+
+    <dependencyManagement>
+        <dependencies>
+            <!--talpay-lib-rabbitmq-->
+            <dependency>
+                <groupId>io.dropwizard</groupId>
+                <artifactId>dropwizard-core</artifactId>
+                <version>${dropwizard.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>io.dropwizard</groupId>
+                <artifactId>dropwizard-client</artifactId>
+                <version>${dropwizard.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.dropwizard</groupId>
+                <artifactId>dropwizard-jersey</artifactId>
+                <version>${dropwizard.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.fasterxml.jackson.core</groupId>
+                <artifactId>jackson-core</artifactId>
+                <version>${jackson.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.rabbitmq</groupId>
+                <artifactId>amqp-client</artifactId>
+                <version>${rabbitmq.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-lang3</artifactId>
+                <version>${apache.commons.lang.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>commons-io</groupId>
+                <artifactId>commons-io</artifactId>
+                <version>${commons.io.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>commons-net</groupId>
+                <artifactId>commons-net</artifactId>
+                <version>${commons.net.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>${lombok.version}</version>
+            </dependency>
+
+            <!--talpay-common -->
+
+            <dependency>
+                <groupId>com.javaslang</groupId>
+                <artifactId>javaslang</artifactId>
+                <version>${com.javaslang.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>javax.validation</groupId>
+                <artifactId>validation-api</artifactId>
+                <version>${javax.validation.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>net.gini.dropwizard</groupId>
+                <artifactId>dropwizard-gelf</artifactId>
+                <version>${dropwizard.gelf.version}</version>
+                <exclusions>
+                    <exclusion>
+                        <groupId>org.slf4j</groupId>
+                        <artifactId>slf4j-api</artifactId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+
+
+            <!--talpay-lib-dropwizard-->
+            <dependency>
+                <groupId>org.hibernate</groupId>
+                <artifactId>hibernate-core</artifactId>
+                <version>${hibernate.core.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.dropwizard</groupId>
+                <artifactId>dropwizard-db</artifactId>
+                <version>${dropwizard.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.dropwizard</groupId>
+                <artifactId>dropwizard-hibernate</artifactId>
+                <version>${dropwizard.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>net.sf.jsefa</groupId>
+                <artifactId>jsefa</artifactId>
+                <version>${net.sf.jsefa.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.jcabi</groupId>
+                <artifactId>jcabi-manifests</artifactId>
+                <version>${jcabi-manifests.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.yaml</groupId>
+                <artifactId>snakeyaml</artifactId>
+                <version>${snakeyaml.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.google.inject</groupId>
+                <artifactId>guice</artifactId>
+                <version>${guice.version}</version>
+                <exclusions>
+                    <exclusion>
+                        <groupId>com.google.guava</groupId>
+                        <artifactId>guava</artifactId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+
+            <dependency>
+                <groupId>io.dropwizard.metrics</groupId>
+                <artifactId>metrics-graphite</artifactId>
+                <version>${dropwizard.graphite.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.smoketurner</groupId>
+                <artifactId>dropwizard-swagger</artifactId>
+                <version>${dropwizard.swagger.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>javax.annotation</groupId>
+                <artifactId>javax.annotation-api</artifactId>
+                <version>${javax.annotation.version}</version>
+            </dependency>
+
+
+
+            <!--testing-->
+
+            <dependency>
+                <groupId>io.dropwizard</groupId>
+                <artifactId>dropwizard-testing</artifactId>
+                <version>${dropwizard.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>junit</groupId>
+                <artifactId>junit</artifactId>
+                <version>${junit.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.mockito</groupId>
+                <artifactId>mockito-core</artifactId>
+                <version>${mockito.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.assertj</groupId>
+                <artifactId>assertj-core</artifactId>
+                <version>${assertj.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.mockito</groupId>
+                <artifactId>mockito-inline</artifactId>
+                <version>${mockito.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.mockftpserver</groupId>
+                <artifactId>MockFtpServer</artifactId>
+                <version>${mock.ftp.server.version}</version>
+            </dependency>
+
+        </dependencies>
+    </dependencyManagement>
+</project>

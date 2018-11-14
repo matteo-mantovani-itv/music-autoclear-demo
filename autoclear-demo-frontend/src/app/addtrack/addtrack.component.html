@@ -1,0 +1,129 @@
+<div class='row' *ngIf="saved">
+    Successfully saved!
+</div>
+
+<div class="row">
+    <div>
+        <div style="position:relative;">
+            <form autocomplete="off" class="form-inline" novalidate="">
+                <div class="talpay-input-group input-group input-group-med">
+                    <label class="input-group-addon" for="track">Track Title</label>
+                    <input class="form-control"
+                           maxlength=255
+                           name='track'
+                           id='track'
+                           [(ngModel)]="track.track"
+                    />
+                </div>
+
+                <br/>
+
+                <div class="talpay-input-group input-group input-group-med">
+                    <label class="input-group-addon" for="artist">Artist</label>
+                    <input class="form-control"
+                           maxlength=255
+                           name='artist'
+                           id='artist'
+                           [(ngModel)]="track.artist"
+                    />
+                </div>
+
+                <br/>
+
+                <div class="talpay-input-group input-group input-group-med">
+                    <label class="input-group-addon" for="clear">Clear</label>
+                    <select [(ngModel)]='track.cleared' class='form-control' id="clear" name="clear">
+                        <option [value]="option" *ngFor="let option of clearedOptions">{{option}}</option>
+                    </select>
+                </div>
+
+                <br/>
+
+                <div class="talpay-input-group input-group input-group-med">
+                    <label class="input-group-addon" for="clear">Composer(s)</label>
+                    <input class="form-control"
+                           maxlength=255
+                           name='composer'
+                           id='composer'
+                           [(ngModel)]="track.composer"
+                    />
+                </div>
+
+                <br/>
+
+                <div class="talpay-input-group input-group input-group-med">
+                    <label class="input-group-addon" for="publisher">Publisher(s)</label>
+                    <input class="form-control"
+                           maxlength=255
+                           name='publisher'
+                           id='publisher'
+                           [(ngModel)]="track.publisher"
+                    />
+                </div>
+
+                <br/>
+
+                <div class="talpay-input-group input-group input-group-med">
+                    <label class="input-group-addon" for="tuneCode">Tune code</label>
+                    <input class="form-control"
+                           maxlength=255
+                           name='tuneCode'
+                           id='tuneCode'
+                           [(ngModel)]="track.tuneCode"
+                    />
+                </div>
+
+                <br/>
+
+                <div class="talpay-input-group input-group input-group-med">
+                    <label class="input-group-addon" for="isrc">ISRC number</label>
+                    <input class="form-control"
+                           maxlength=255
+                           name='isrc'
+                           id='isrc'
+                           [(ngModel)]="track.isrcNumber"
+                    />
+                </div>
+
+                <br/>
+
+                <div class="talpay-input-group input-group input-group-med">
+                    <label class="input-group-addon" for="record">Record Label</label>
+                    <input class="form-control"
+                           maxlength=255
+                           name='record'
+                           id='record'
+                           [(ngModel)]="track.recordLabel"
+                    />
+                </div>
+
+                <br/>
+
+
+                <div class="form-group pad-left-4">
+                    <button type="button"
+                            id='login-button'
+                            class='btn btn-med btn-primary btn-talpay'
+                            (click)="save()"
+                            [disabled]="!canSave()"
+                            *ngIf="!track.id"
+                            tabindex='1'>
+                        <i class="glyphicon glyphicon-save fa-lg"></i> Save
+                    </button>
+
+                    <button type="button"
+                            id='login-button'
+                            class='btn btn-med btn-primary btn-talpay'
+                            (click)="save()"
+                            [disabled]="!canSave()"
+                            *ngIf="track.id"
+                            tabindex='1'>
+                        <i class="glyphicon glyphicon-save fa-lg"></i> Update
+                    </button>
+                    
+                    <a (click)="cancel()">cancel</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

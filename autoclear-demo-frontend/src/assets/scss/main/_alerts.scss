@@ -1,0 +1,66 @@
+
+.alert.top-right .close:focus {
+    outline: none;
+}
+
+.alert.action.alert-info{
+    background-image: none;
+    background-color: $itv_blue_20;
+    border-color: $itv_blue_40;
+    opacity: 0.8;
+    color: $itv_black;
+    border: 1px solid transparent;
+}
+
+@keyframes alert-centred {
+    40%  {
+        transform: translate(-50px,200px) scale(1.5,1.5);
+        border-radius: 10px;
+    }
+    100% {
+        transform: translate(0,0) scale(1,1);
+        background-image: none;
+        background-color: $itv_blue_20;
+        border: 1px solid transparent;
+        color: $itv_black;
+        opacity: 0.8;
+        border-radius: 2px;
+    }
+}
+.alert.action.centred.alert-info {
+    animation-name: alert-centred;
+    animation-duration: .66s;
+    animation-delay:1.25s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease;
+    transform: translate(-600px,200px) scale(2,2);
+    border-radius: 20px;
+    border-color: $itv_black;
+    background-color: $itv_blue_20;
+    color: $itv_black;
+    border-width: 2px;
+    opacity:1;
+    background-image: none;
+}
+@keyframes slide-right {
+    from {
+        transform: translateX(0px);
+        opacity:0.8;
+    }
+    to {
+        transform: translateX(280px);
+        opacity:0;
+    }
+}
+
+.alert.action.alert-info.ng-leave{
+    animation-name: slide-right;
+    animation-fill-mode: forwards;
+    animation-duration: .66s;
+    animation-timing-function: ease;
+}
+
+.alert.action{
+    transition: all 0.45s ease;
+}
+

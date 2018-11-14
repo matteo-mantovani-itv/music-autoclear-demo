@@ -1,0 +1,548 @@
+/* app css stylesheet */
+
+html,
+body {
+    height: 100%;
+  /* The html and body elements cannot have any padding or margin. */
+}
+html *
+{
+   font-family: reemRegular;
+}
+b {
+    font-family: reemBold;
+}
+/* Wrapper for page content to push down footer */
+.wrap {
+    min-height: 100%;
+    height: auto !important;
+    height: 100%;
+    /* Negative indent footer by it's height */
+    margin-top: -$header_height;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: -$footer_height;
+    padding-bottom: $footer_height;
+    padding-top: $footer_height;
+}
+
+.footer .row{
+    height: $footer_height;
+}
+.footer .row{
+    background-color: $light_grey;
+}
+.header .row{
+    height: $header_height;
+    background-color: $light_grey;
+}
+.div-grey-background {
+    background-color: $light_grey;
+}
+/* Lastly, apply responsive CSS fixes as necessary */
+@media (max-width: 767px) {
+    .footer {
+        margin-left: -20px;
+        margin-right: -20px;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}
+/* -- end header and footer css */
+
+
+/* general useful layout classes */
+
+.centre {
+    text-align: center;
+}
+.right {
+    text-align: right;
+    float: right;
+}
+.left {
+    text-align: left;
+}
+
+.header-height {
+    height: $header_height;
+}
+.footer-height {
+    height: $header_height;
+}
+.vertical-middle {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.header-bar {
+    position: relative;
+
+    .right-sub-title {
+        position: absolute;
+        top: 40%;
+        right: 0;
+    }
+}
+.background-white {
+    background-color: $itv_white !important;
+}
+span.error {
+    color: $itv_pink;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.warning {
+    color: $itv_yellow_80;
+}
+
+.strong {
+    font-weight: bolder;
+}
+.nowrap {
+    white-space: nowrap;
+}
+.cell-100 {
+    width: 100px !important;
+}
+.greyed {
+    color: $itv_black_60;
+}
+.light-greyed {
+    color: $itv_black_20;
+}
+.green-text {
+    color: $itv_green;
+}
+.red-text {
+    color: $warning;
+}
+
+@keyframes busy-background-fade-in{
+    0% {opacity:0.01}
+    100% {opacity:1}
+}
+
+.busy-overlay {
+    animation-name: busy-background-fade-in;
+    animation-duration: 1s;
+    position: fixed;
+    background-color:rgba(0,0,0,0.1);
+    top: 0px;
+    left: 0px;
+    bottom: 0px;
+    right: 0px;
+    z-index: 1040;
+}
+
+.navbar-default {
+    border: none;
+}
+// --- for create R&C request ---
+.talpay-tabbable {
+    li {
+        position: relative;
+        left: 2px;
+    }
+    li.active {
+        border: 2px solid $itv_blue_60;
+        border-right: 0px;
+        z-index: 5;
+    }
+    ul.nav {
+        padding-right: 0px;
+    }
+    .tab-content {
+        border: 2px solid $itv_blue_60;
+        background-color: $itv_black_2;
+    }
+    .active {
+        background-color: $itv_black_2;
+    }
+    .tab-pane {
+        padding: 10px;
+        min-height: 500px;
+    }
+    .tab-pane.short {
+        min-height: 300px;
+    }
+    .nav > li > a {
+        white-space:nowrap;
+        overflow-x: hidden;
+        color: $itv_blue_POS;
+    }
+    .nav > li > a.tab-wrap {
+        white-space: normal;
+    }
+    .nav > li > a:hover, .nav > li > a:focus {
+        text-decoration: none;
+        background-color: transparent;
+        color: $itv_blue_POS;
+    }
+    .nav > li > a.link:hover, .nav > li > a.link:focus {
+        background-color: transparent;
+        color: $itv_blue_80;
+    }
+    .nav > li.passive > a.link:hover, .nav > li.passive > a.link:focus {
+        color: $itv_blue;
+        text-decoration: none;
+        cursor:pointer;
+    }
+}
+
+
+.talpay-tabbable2 {
+    .active {
+        background-color: #d8f4f6;
+    }
+    .nav > li > a:hover, .nav > li > a:focus {
+        text-decoration: none;
+        color: #337ab7;
+        background-color: #d8f4f6;
+    }
+    .nav > li.passive > a:hover, .nav > li.passive > a:focus {
+        background-color: rgb(204, 204, 204);
+    }
+    .nav > li.passive > a.link:hover, .nav > li.passive > a.link:focus {
+        text-decoration: none;
+        color: black;
+        cursor:pointer;
+    }
+    li.passive:hover::after,li.passive:focus::after{
+        border-left-color: rgb(204, 204, 204);
+    }
+    li.active::after{
+        content: "";
+        position: absolute;
+        right: -30px;
+        height: 100%;
+        top: 0px;
+        border-right: 30px solid #d8f4f6;
+    }
+    li.passive {
+        width: 100%;
+        background-color: rgb(204, 204, 204);
+    }
+    li.passive::after {
+       content: "";
+       width: 0;
+       height: 0px;
+       right: -15px;
+       top: 0px;
+       float: right;
+       position: absolute;
+       background-color: white;
+       border-top: 20px solid transparent;
+       border-bottom: 20px solid transparent;
+       border-left: 40px solid #ccc;
+    }
+    .tab-pane {
+        padding:10px;
+        min-height: 500px;
+    }
+}
+
+
+.search-table {
+    border: 1px solid $itv_blue_60;
+    background-color: white;
+    max-height: 480px;
+    tbody {
+        font-size: 0.9em;
+    }
+    .col-headers {
+        background-color: #fefefe;
+        border-bottom: 1px solid #f2f2f2;
+    }
+}
+
+.search-widget{
+    position:absolute;
+    z-index: 1020;
+    width: 300px;
+    max-height: 400px;
+    background-color:white;
+    border: 1px solid darkblue;
+}
+.search-header{
+    width:100%;
+    padding: 8px;
+    height: 32px;
+    text-align: center;
+    background-color: $itv_yellow_10;
+}
+.border-bottom{
+    border-bottom: 1px solid $itv_blue_60;
+}
+.search-list {
+    max-height: 318px;
+    overflow-y: auto;
+}
+
+.search-list ul{
+    list-style: none;
+    -webkit-padding-start: 2px;
+}
+.search-list li{
+    display:block;
+    border-bottom: 1px solid grey;
+    padding: 4px;
+}
+.search-list li:nth-child(even) {
+    background-color: lightgray;
+}
+.search-list li .found,.search-table td .found,.payee-results-holder td .found,.contributor-results-holder td .found  {
+    font-weight:bold;
+    text-decoration:underline;
+}
+.search-bottom{
+    position: relative;
+    bottom: 0px;
+    width: 100%;
+    height: 48px;
+    padding: 8px;
+    border-top: 1px solid black;
+    background-color: $itv_yellow_10;
+}
+
+fieldset {
+    border: 2px $itv_blue_60;
+    border-style: solid;
+    margin: 0;
+    padding: 12px;
+}
+legend{
+    line-height: inherit;
+    width: auto;
+    margin: 0;
+    padding:4px;
+    font-size: 1.2em;
+    font-weight: normal;
+    font-family: reemRegular;
+}
+.user-card{
+    background-color: white;
+    padding: 8px;
+    border: 2px solid $itv_blue_60;
+
+    .link {
+        -webkit-transition-duration: 0s;
+       transition-duration: 0s;
+    }
+    .service-company-heading {
+        border-bottom: solid 2px $itv_blue_40;
+        padding-bottom: 8px;
+        span.card-gadget {
+            float: right;
+            display: inline;
+        }
+    }
+    div.card-heading{
+        border-bottom: solid 2px $itv_blue_40;
+        padding-bottom: 8px;
+    }
+    .card-heading{
+        float: right;
+        border-bottom: solid 2px $itv_blue_40;
+        padding-bottom: 8px;
+        display: inline;
+    }
+    .card-body{
+        padding-top: 8px;
+        p {
+            margin: 0px 0px 4px 0px;
+        }
+    }
+    .form-field-row {
+        padding-top: 4px;
+        padding-bottom: 4px;
+        margin-left: 4px;
+        margin-right: 4px;
+        background-color: $itv_blue_10;
+        border-top: 1px solid $itv_black_20;
+        .controls.form-group {
+            margin-bottom: 0px;
+        }
+    }
+    .form-field-summary-row {
+        padding-top: 4px;
+        padding-bottom: 4px;
+        margin-left: 4px;
+        margin-right: 4px;
+        background-color: $itv_blue_20;
+    }
+    .form-field-headers {
+        margin-left: 4px;
+        margin-right: 4px;
+    }
+    .form-field-headers .control-label {
+        color: $itv_blue_POS;
+    }
+    .vat-status {
+        padding: 8px 8px 12px 8px;
+    }
+}
+.attach-vat-top span {
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 5px;
+    border: 2px solid $itv_blue_60;
+    border-bottom: none;
+    background-color: $itv_blue_10;
+    margin-bottom: -2px;
+}
+
+div.vat-record {
+    border: 2px solid $itv_blue_60;
+    margin-bottom: 10px;
+    padding-top: 4px;
+    background-color: $itv_blue_5;
+
+    .sba-separator {
+        margin-top:6px;
+        border-top:1px solid $itv_blue-40;
+    }
+}
+div.vat-record.can-edit:hover {
+     outline: 2px solid $itv_blue_80;
+}
+div.vat-record.just-edited {
+    outline: 3px $itv_green_60;
+}
+
+form.vat-edit-form  {
+    div.vat-record.editing {
+       border: 2px solid $itv_blue_60;
+       outline: 1px solid $itv_blue_80;
+       margin-bottom: 10px;
+       padding: 4px;
+       background-color: $itv_blue_5;
+
+       .form-field-row.sba-record.can-edit:hover {
+            background-color: $itv_blue_20;
+            cursor:pointer;
+       }
+       .form-field-row.sba-record:focus{
+           outline:none;
+       }
+   }
+}
+
+.contributor-search-results,.payee-search-results {
+    position: absolute;
+    z-index: 10;
+    border: 1px solid $itv_blue_60;
+    background-color: white;
+    padding: 6px;
+    -webkit-box-shadow: 6px 6px 2px 0px rgba(0,0,0,0.15);
+    -moz-box-shadow: 6px 6px 2px 0px rgba(0,0,0,0.15);
+    box-shadow: 6px 6px 2px 0px rgba(0,0,0,0.15);
+    .result-header {
+        padding:5px;
+    }
+    .contributor-results-holder,.payee-search-results-holder {
+        border-top: 1px solid $itv_blue_60;
+        table {
+            width: 700px;
+        }
+    }
+}
+
+td > select.form-control.line-items {
+    font-size: 13px;
+    width: 100%;
+    font-family: reemRegular;
+    padding: 1px;
+}
+td > span > input.form-control.line-items, td > input.form-control.line-items{
+    font-size: 13px;
+    width: 100%;
+    font-family: reemRegular;
+    padding: 1px;
+    text-align: right;
+}
+.line-item-row:hover{
+    background-color:lightgray;
+}
+.line-item-row-edit{
+    background-color:white;
+}
+table.line-items tbody > tr > td {
+    border:0px;
+}
+.form-field-selector {
+    div {
+        padding: 4px 4px;
+    }
+    border: 2px solid $itv_blue_60;
+    background-color: $itv_blue_10;
+    button,select {
+        margin-left:10px;
+    }
+}
+
+
+.party-history {
+    border: 1px solid $itv_blue_60;
+    background-color: $itv_blue_5;
+    margin-top:4px;
+    margin-bottom:4px;
+    padding: 5px;
+    div.party-history-row:nth-child(even) {
+        background-color: $itv_blue_10;
+    }
+}
+
+.vat-history {
+    .main-heading {
+        font-weight: 600;
+        font-size: medium;
+        text-align: center;
+        border-bottom: 1px solid lightgray;
+        padding-bottom: 4px;
+    }
+    .table-titles-row {
+        border-bottom: 1px solid lightgrey;
+        font-size: 14px;
+        padding: 8px;
+    }
+    .vat-history-row {
+        font-size: 14px;
+        padding-left: 8px; padding-right:8px; padding-top:4px; padding-bottom: 4px;
+    }
+    .self-billing-table{
+        padding: 4px;
+        border: 1px solid #a1a1a5;
+        background-color: #f9f9f9;
+    }
+}
+
+.approval-headline {
+    font-size:1.4em;
+}
+.approval-sub-headline {
+    font-size:1.3em;
+}
+
+span.deceased {
+    background-color: $itv_black_40;
+    color: white;
+    display: inline-block;
+    padding: 5px 15px;
+    border: 2px solid black;
+}
+
+.flex {
+   display: flex;
+   flex-direction: row;
+
+   .flex-xs-1 {
+      flex: 1;
+   }
+
+   .flex-xs-11 {
+      flex: 11;
+   }
+
+}

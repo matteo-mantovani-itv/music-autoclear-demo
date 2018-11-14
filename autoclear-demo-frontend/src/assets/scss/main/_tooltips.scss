@@ -1,0 +1,374 @@
+.tooltip {
+    opacity:1;
+}
+.tooltip:hover{
+    opacity:0.2;
+}
+.tooltip.hierarchy{
+    .tooltip-inner {
+        padding: 3px 18px;
+        font-size: 15px;
+        color: $itv_black;
+    }
+}
+.tooltip-inner {
+    background-color: $itv_yellow;
+    color: $itv_black_80;
+    border-radius: 8px;
+}
+.tooltip.top .tooltip-arrow {
+    border-top-color: $itv_yellow;
+}
+
+.valdr-message {
+    display: none;
+    position: absolute;
+    width: 300px;
+
+    .datepicker-error {
+        position: relative;
+        top: -31px;
+        left: 160px;
+    }
+    .datepicker-error.top {
+        position: relative;
+        top: auto;
+        bottom: 0px;
+        left: 0px;
+    }
+    .input-sm-error {
+        position: relative;
+        top: -35px;
+        left: 120px;
+    }
+    .tooltip {
+        margin-top: 8px !important;
+        opacity: 1;
+    }
+    .tooltip:hover {
+        opacity: 0.2;
+    }
+    .tooltip-inner{
+       background-color: $itv_pink;
+       color: white;
+       margin-top: -5px;
+    }
+    .tooltip.top-left .tooltip-arrow {
+        border-top-color: $itv_pink;
+    }
+    .tooltip.top-right .tooltip-arrow {
+        border-top-color: $itv_pink;
+        left: 10%;
+        bottom: 5px;
+    }
+    .tooltip.bottom-right .tooltip-arrow {
+        border-bottom-color: $itv_pink;
+        left: 10%;
+    }
+    .tooltip.bottom-left .tooltip-arrow {
+        border-bottom-color: $itv_pink;
+        left: 10%;
+    }
+    .tooltip.right  .tooltip-arrow {
+        top: 40%;
+        border-right-color: #bd2073;
+    }
+
+    .arrow-warning {
+        border-bottom-color : $itv_yellow !important;
+        background-color: none;
+    }
+
+    .warning {
+       background-color: $itv_yellow !important;
+       color: black !important;
+    }
+}
+
+
+
+input.form-control.date-input + .valdr-message .datepicker-error {
+  position: relative;
+  top: -35px;
+  left: 123px;
+}
+input.form-control.date-input + .valdr-message .datepicker-error.top{
+  position: relative;
+  top:0px;
+  bottom: -35px;
+  left: 0px;
+}
+
+
+.valdr-message .datepicker-error  span.tooltip-inner span {
+    max-width: 300px;
+    min-width: 150px;
+}
+.valdr-message.display-on {
+    display:inline-block;
+}
+
+input.form-control + .valdr-message .datepicker-error span.tooltip-inner,
+input.form-control + .valdr-message .datepicker-error span.tooltip-arrow
+{
+    display:none;
+}
+
+div.ng-invalid > .input-group.datepicker.focussed + .valdr-message,
+input.form-control.ng-invalid:focus + .valdr-message,
+input.form-control.ng-invalid:focus + .valdr-message .datepicker-error span.tooltip-arrow,
+input.form-control.ng-invalid:focus + .valdr-message .datepicker-error span.tooltip-inner
+{
+    display:inline-block;
+}
+input.form-control.ng-invalid:focus + .valdr-message .datepicker-error span.tooltip-inner{
+    display:inline-block;
+}
+input.form-control.ng-invalid:focus + .valdr-message .datepicker-error span.tooltip-inner span{
+    display:block;
+}
+
+input:focus + div.valdr-message.ng-invalid.ng-dirty,
+input:focus + div.valdr-message.ng-invalid.ng-touched.ng-dirty,
+input.ng-invalid:focus + .valdr-message .datepicker.error span.tooltip,
+input.ng-invalid:focus + .valdr-message .datepicker.error span.tooltip,
+.valdr-message.invalid-datepicker,
+.valdr-message.invalid-datepicker,
+textarea:focus + div.valdr-message.ng-invalid.ng-touched.ng-dirty,
+textarea:focus + div.valdr-message.ng-invalid.ng-dirty
+select:focus + div.valdr-message.ng-invalid.ng-touched.ng-dirty,
+select:focus + div.valdr-message.ng-invalid.ng-dirty,
+// note - these rely on the focussed class being added by the talpayDateFilter directive
+div.datepicker.focussed +  datepicker-error div.valdr-message.ng-invalid.ng-touched.ng-dirty,
+div.datepicker.focussed +  datepicker-error div.valdr-message.ng-invalid.ng-dirty
+{
+    display: inline-block;
+}
+div.with-span {
+    input {
+        display:inline-block;
+    }
+    input.form-control.ng-invalid:focus + .valdr-message,
+    input:focus + div.valdr-message.ng-invalid.ng-dirty,
+    input:focus + div.valdr-message.ng-invalid.ng-touched.ng-dirty {
+        display: block;
+    }
+}
+.valdr-message.invalid-datepicker{
+    z-index: 2000;
+}
+
+#lineItemAmount.ng-invalid-total-too-high + div.valdr-message {
+    display:none;
+}
+#lineItemAmount.ng-invalid-total-too-high.ng-dirty + div.valdr-message {
+    display: inline;
+    position: inherit;
+}
+
+.historic-adjustments {
+    .tooltip-inner {
+        min-width: 250px;
+    }
+}
+
+.cheque-number-helper {
+    display: initial;
+    position: relative;
+    top: -8px;
+
+    .tooltip{
+        color: white;
+        opacity: 1;
+        padding-top: 1px;
+        z-index: 1040;
+    }
+    .tooltip.oos{
+        padding-left: 26px;
+    }
+
+    .tooltip-inner{
+        background-color: $itv_blue_POS;
+        line-height: 2.5em;
+        color: white;
+        border-radius: 0px;
+        min-width: 326px;
+        padding-top: 14px;
+        padding-bottom: 14px;
+    }
+}
+
+.cheque-spoiler-helper {
+    display: initial;
+    .tooltip{
+        color: white;
+        opacity: 1;
+        width: 200px;
+        right: -36px;
+    }
+    .tooltip.bottom .tooltip-arrow {
+        border-bottom-color: $itv_blue_POS;
+    }
+    .tooltip-inner{
+        background-color: $itv_blue_POS;
+        color: white;
+        border-radius: 0px;
+        padding-top: 14px;
+        padding-bottom: 14px;
+    }
+}
+
+div.talpay-tooltip.tooltip.in.tooltip-info{
+    opacity: .95;
+    > div.tooltip-inner {
+        background-color: $itv_yellow_80;
+        color: black;
+        border-radius: 12px;
+        max-width: 280px;
+        margin-top: 4px;
+        -webkit-box-shadow: 14px 10px 6px -2px rgba(0,0,0,0.75);
+        -moz-box-shadow: 14px 10px 6px -2px rgba(0,0,0,0.75);
+        box-shadow: 14px 10px 6px -2px rgba(0,0,0,0.75);
+        > p.h6{
+           font-weight: 800;
+        }
+        p {
+            margin: 8px 0px;
+        }
+    }
+     > div.tooltip-arrow {
+         border-top-color: $itv_yellow_80;
+     }
+}
+div.talpay-tooltip.tooltip.in.tooltip-info.bottom-left  {
+    margin-left: -12px;
+    margin-top: 8px;
+    > div.tooltip-arrow {
+       border-bottom-color: $itv_yellow_80;
+    }
+    > div.tooltip-arrow{
+       border-width: 0 6px 14px;
+   }
+}
+div.talpay-tooltip.tooltip.in.tooltip-info.bottom-left.no-left-margin  {
+    margin-left: -10px;
+}
+div.talpay-tooltip.tooltip.in.tooltip-info.top-left  {
+    margin-left: 40px;
+    margin-top: 20px;
+    > div.tooltip-arrow {
+        border-top-color: $itv_yellow_80;
+        border-width: 14px 6px 0px;
+        box-shadow: 14px 4px 6px -2px rgba(0, 0, 0, 0.75);
+   }
+}
+
+.layer-mask {
+    position: relative;
+    float:left;
+    cursor: not-allowed;
+}
+.layer-mask button[disabled] {
+    position: relative;
+    z-index: -1;
+}
+
+
+div.tooltip.top-left {
+    margin-top: -8px;
+    margin-left: -8px;
+    .tooltip-arrow {
+       bottom: 0px;
+       left: 50%;
+       margin-left: -5px;
+       border-width: 10px 5px 0;
+       border-top-color: $itv_yellow_80;
+       left: 10%;
+    }
+}
+
+.debt-button-panel.tooltip{
+    display: inline-block;
+    position: relative;
+    color: white;
+    opacity: 1;
+    padding-top: 1px;
+    z-index: 1040;
+    .tooltip.oos{
+        padding-left: 26px;
+    }
+    .tooltip-inner{
+        background-color: $itv_pink_40;
+        color: white;
+        line-height: 1.5em;
+        border-radius: 0px;
+        min-width: 220px;
+        padding: 14px 6px;
+        .btn-primary{
+            background-color: $itv_pink;
+            border-color: $itv_pink_60;
+        }
+        .btn-primary:hover{
+            background-color: $itv_pink_80;
+        }
+        .btn-primary:active,.btn-primary:focus{
+            background-color: $itv_pink_60;
+            border-color: $itv_pink;
+        }
+        .btn-default{
+            color:black;
+            border-color: $itv_black_40;
+        }
+        .btn-default:hover{
+            color:black;
+            background-color: $itv_black_5;
+        }
+        .btn-default:active,.btn-default:focus{
+            color:black;
+            background-color: $itv_black_10;
+            border-color: $itv_black_20;
+        }
+    }
+}
+
+.relationship-button-panel.tooltip{
+    display: inline-block;
+    position: relative;
+    color: white;
+    opacity: 1;
+    padding-top: 1px;
+    z-index: 1040;
+    .tooltip.oos{
+        padding-left: 26px;
+    }
+    .tooltip-inner{
+        background-color: inherit;
+        color: white;
+        line-height: 1.5em;
+        border-radius: 0px;
+        min-width: 110px;
+        padding: 5px 5px;
+    }
+}
+
+.recoup-button-panel.tooltip{
+    display: inline-block;
+    position: relative;
+    p {
+        color: $itv_black;
+    }
+    opacity: 1;
+    padding-top: 1px;
+    z-index: 1040;
+    .tooltip.oos{
+        padding-left: 26px;
+    }
+    .tooltip-inner{
+        background-color: $itv_blue_60;
+        color: white;
+        line-height: 1.5em;
+        border-radius: 0px;
+        min-width: 250px;
+        padding: 14px 6px;
+    }
+}

@@ -1,0 +1,148 @@
+.modal-backdrop.am-fade {
+  background: rgba(0,0,0,.3);
+  opacity: .1;
+  transition: opacity .15s linear;
+  .ng-enter {
+    opacity: 0;
+    .ng-enter-active {
+      opacity: .1;
+    }
+  }
+  .ng-leave {
+    opacity: .3;
+    .ng-leave-active {
+      opacity: 0;
+    }
+  }
+}
+
+.spinner {
+   transition:all 0.2s ease-in-out;
+}
+
+.talpay-fade {
+    transition:all 0.2s linear;
+}
+
+.gly-rotate-180,
+.fa-rotate-180,
+.fa-rotate-180-add.fa-rotate-180-add-active,
+.gly-rotate-180-add.gly-rotate-180-add-active{
+    filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=2);
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    transform: rotate(180deg);
+}
+.gly-rotate-180-remove.gly-rotate-180-remove-active{
+    filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=2);
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+}
+
+.vat-eligibility-switch {
+    font-weight: normal;
+    transition: 1.2s ease-out all;
+    padding-left: 4px;
+    padding-right: 4px;
+}
+
+.vat-eligibility-container{
+    .ng-animate {
+        font-weight: normal;
+        color:$itv_black;
+        font-size: 100%;
+    }
+    .vat-eligibility-switch.ng-enter,
+    .vat-eligibility-switch.ng-enter.ng-enter-active {
+        color: $itv_pink;
+        font-weight: bold;
+        font-size: 120%;
+    }
+    .vat-eligibility-switch.ng-leave,
+    .vat-eligibility-switch.ng-leave.ng-leave-active {
+        border: none;
+        display: none;
+    }
+}
+
+@keyframes pulsed {
+    0% {
+        transform:scale(1.0,1.0);
+    }
+    16.6% {
+        transform:scale(1.3,1.3);
+    }
+    33% {
+        transform:scale(1.0,1.0);
+    }
+    49.6% {
+        transform:scale(1.2,1.2);
+    }
+    66% {
+        transform:scale(1.0,1.0);
+    }
+    82.5% {
+        transform:scale(1.1,1.1);
+    }
+    100% {
+        transform:scale(1.0,1.0);
+        opacity:1;
+    }
+}
+
+.btn-talpay.pulsed {
+    display:block;
+    z-index: 2000;
+}
+.pulsed {
+    -webkit-animation:pulsed 0.6s linear;
+    -moz-animation:pulsed 0.6s linear;
+    -o-animation:pulsed 0.6s linear;
+    animation:pulsed 0.5s linear;
+}
+
+@keyframes glowdown {
+    0% {
+        transform:scale(1.0,1.0);
+    }
+    50% {
+        transform:scale(1.02,1.02);
+        opacity:.3;
+    }
+    100% {
+        transform:scale(1.0,1.0);
+        opacity:.65;
+    }
+}
+
+button.btn-talpay.btn-primary.btn[disabled] {
+    animation:glowdown 0.1s ease-in-out;
+}
+
+@keyframes glowup {
+    0% {
+        transform:scale(1.0,1.0);
+        opacity:.65;
+        filter: brightness(1);
+    }
+    50% {
+        transform:scale(1.08,1.08);
+        filter: brightness(1.5);
+        opacity:.8;
+    }
+    100% {
+        transform:scale(1.0,1.0);
+        filter: brightness(1);
+        opacity:1;
+    }
+}
+
+button.btn-talpay.btn-primary.btn:enabled {
+    animation:glowup 0.25s ease-in-out;
+    animation-fill-mode: forwards;
+}

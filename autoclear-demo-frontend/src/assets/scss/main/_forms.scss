@@ -1,0 +1,626 @@
+.form-header {
+  font-size: 1em;
+  color: $itv_blue;
+  font-weight: bold;
+}
+
+.input-general {
+  border-radius: 2px;
+  font-size: 14px;
+  border: 1px solid $itv_black_20 !important;
+  -webkit-box-shadow: inset 0;
+  box-shadow: inset 0;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  height: 28px;
+}
+
+@mixin input-sm() {
+  width: 120px;
+}
+
+@mixin input-med() {
+  width: 240px;
+}
+
+@mixin input-lg() {
+  width: 360px;
+}
+
+@mixin input-xlg() {
+  width: 480px;
+}
+
+.pensionRateContainer {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: flex-end;
+  align-items: center
+}
+
+.pensionRateLabel {
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.pensionRateInputBox {
+  width: 25%;
+  margin-left: 2.5pc;
+  margin-right: 0.2pc
+}
+
+input.input-sm, input.form-control.input-sm {
+  @extend .input-general;
+  @include input-sm;
+  height: 28px;
+}
+
+select.input-sm, select.form-control.input-sm {
+  @extend .input-general;
+  @include input-sm;
+}
+
+input.input-med, input.form-control.input-med {
+  @extend .input-general;
+  @include input-med;
+  height: 28px;
+}
+
+input.input-med.tall, input.form-control.input-med.tall {
+  height: 34px;
+}
+
+select.input-med.tall, select.form-control.input-med.tall {
+  height: 34px;
+}
+
+select[size].input-med.tall, select[size].form-control.input-med.tall
+select[multiple].input-med.tall, select[multiple].form-control.input-med.tall {
+  height: auto;
+}
+
+select.input-med, select.form-control.input-med {
+  @extend .input-general;
+  @include input-med;
+}
+
+input.input-lg, input.form-control.input-lg,
+select.input-lg, select.form-control.input-lg {
+  @extend .input-general;
+  @include input-lg;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  height: 28px;
+}
+
+select.input-lg, select.form-control.input-lg {
+  @extend .input-general;
+  @include input-lg;
+}
+
+input.input-xlg, input.form-control.input-xlg {
+  @extend .input-general;
+  @include input-xlg;
+  height: 28px;
+}
+
+select.input-xlg, select.form-control.input-xlg {
+  @extend .input-general;
+  @include input-xlg;
+}
+
+select.input-sm, select.input-med {
+  padding-top: 2px;
+  padding-bottom: 2px;
+  height: 28px;
+}
+
+.datepicker span.input-group-btn {
+  display: inline;
+}
+
+.input-group-addon.talpay {
+  background-image: none;
+  background-color: $itv_blue_40;
+  color: $itv_black_80;
+}
+
+input.ng-valid, textarea.ng-valid {
+  border: 1px dotted $itv_black_20;
+}
+
+input.ng-valid, textarea.ng-valid {
+  border: 1px dotted $itv_black_20;
+}
+
+#vat-edit-form {
+  input.datepicker.ng-invalid-required {
+    border: 2px solid $itv_pink;
+  }
+  input.datepicker.ng-invalid {
+    border: 2px solid $itv_pink;
+  }
+}
+
+input.ng-warning {
+  border: 2px solid $itv_yellow !important;
+}
+
+input.ng-invalid {
+  border: 2px solid $itv_pink !important;
+}
+
+input.ng-dirty.ng-invalid, textarea.ng-dirty.ng-invalid, select.ng-dirty.ng-invalid,
+input.form-control.ng-dirty.ng-invalid.ng-invalid-valdr,
+textarea.form-control.ng-dirty.ng-invalid.ng-invalid-valdr,
+select.form-control.ng-dirty.ng-invalid.ng-invalid-valdr {
+  border: 2px solid $itv_pink;
+}
+
+input.ng-untouched, input.ng-pristine.ng-pending.ng-touched, input.ng-dirty.ng-valid,
+textarea.ng-untouched, textarea.ng-pristine.ng-pending.ng-touched, textarea.ng-dirty.ng-valid,
+select.ng-untouched, select.ng-pristine.ng-pending.ng-touched, select.ng-dirty.ng-valid {
+  border: 2px solid $itv_black_20;
+}
+
+input:active, input.ng-pristine.ng-touched:active,
+textarea:active, textarea.ng-pristine.ng-touched:active,
+select:active, select.ng-pristine.ng-touched:active {
+  border: 2px solid $itv_blue_80;
+}
+
+select.input-sm {
+  width: 180px;
+}
+
+span.inline-input-required:after {
+  margin-left: 4px;
+  margin-top: -4px;
+  color: $itv_pink;
+  content: "\2a";
+  font-size: 18px;
+  position: absolute;
+}
+
+.form-group > label {
+  color: $itv_blue_POS;
+}
+
+.form-group > div > label {
+  color: $itv_blue_POS;
+}
+
+label.filter-label {
+  border: 2px solid #d5d5d5;
+  padding-top: 1px;
+  padding-bottom: 4px;
+  padding-left: 8px;
+  padding-right: 8px;
+}
+
+label.talpay-checkbox {
+  color: $itv_blue_POS;
+  padding-left: 0;
+}
+
+label.talpay-checkbox > input[type="radio"] + span {
+  &:before {
+    content: "\f10c";
+    letter-spacing: 5px;
+    font-family: FontAwesome;
+  }
+}
+
+label.talpay-checkbox > input[type="radio"]:checked + span {
+  &:before {
+    content: "\f192";
+    letter-spacing: 5px;
+  }
+}
+
+label.talpay-checkbox [type="radio"],
+input[type=radio].talpay-checkbox,
+input[type=checkbox].talpay-checkbox {
+  opacity: 0;
+  margin: 0px;
+}
+
+/* to hide the checkbox itself */
+
+label.talpay-checkbox:before,
+input[type=radio].talpay-checkbox + label:before,
+input[type=checkbox].talpay-checkbox + label:before {
+  font-family: FontAwesome;
+  margin-left: -13px;
+}
+
+input[type=radio].talpay-checkbox + label,
+input[type=checkbox].talpay-checkbox + label {
+  color: $itv_blue_POS;
+}
+
+input[type=radio].talpay-checkbox + label:before {
+  content: "\f10c";
+  color: $itv_blue_POS;
+}
+
+/* unchecked icon */
+input[type=checkbox].talpay-checkbox + label:before {
+  content: "\f096";
+  color: $itv_blue_POS;
+}
+
+/* unchecked icon */
+input[type=radio].talpay-checkbox + label:before {
+  letter-spacing: 5px;
+}
+
+/* space between checkbox and label */
+input[type=checkbox].talpay-checkbox + label:before {
+  letter-spacing: 5px;
+}
+
+/* space between checkbox and label */
+
+input[type=radio].talpay-checkbox:checked + label:before {
+  content: "\f192";
+}
+
+input[type=checkbox].talpay-checkbox:checked + label:before {
+  content: "\f14A";
+}
+
+/* checked icon */
+input[type=radio].talpay-checkbox:checked + label:before {
+  letter-spacing: 5px;
+}
+
+/* allow space for check mark */
+input[type=checkbox].talpay-checkbox:checked + label:before {
+  letter-spacing: 5px;
+}
+
+/* allow space for check mark */
+
+input[type="radio"].talpay-checkbox:focus + label:before,
+input[type="radio"].talpay-checkbox:hover + label:before,
+input[type="radio"].talpay-checkbox:checked:focus + label:before,
+input[type="checkbox"].talpay-checkbox:focus + label:before,
+input[type="checkbox"].talpay-checkbox:hover + label:before,
+input[type="checkbox"].talpay-checkbox:checked:focus + label:before {
+  color: $itv_blue;
+}
+
+input[type="radio"].talpay-checkbox:focus + label,
+input[type="checkbox"].talpay-checkbox:focus + label {
+  color: $itv_blue;
+}
+
+input[type=radio].talpay-checkbox:disabled + label:before,
+input[type=checkbox].talpay-checkbox:disabled + label:before {
+  color: $itv_black_40;
+}
+
+.form-error {
+  border-radius: 2px;
+  font-size: 0.8em;
+  border: 1px solid #d5d5d5;
+  background-color: white;
+  padding: 8px;
+  padding-top: 1px;
+  padding-bottom: 1px;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, .25);
+  width: 240px;
+  height: 28px;
+  color: #555;
+  background-color: #fff;
+  font-size: 0.8em;
+}
+
+.form-error > span:last-child {
+  display: none;
+}
+
+.form-error > span.show-me:last-child {
+  display: inline;
+}
+
+.form-error:hover {
+  cursor: pointer;
+}
+
+.hover-edit:hover {
+  cursor: pointer;
+}
+
+.form-group.compressed {
+  margin-bottom: 4px;
+}
+
+.talpay-input-group.input-group > .input-group-addon {
+  background-color: $itv_black_5;
+  color: $itv_blue_POS;
+}
+
+.input-group-more {
+  padding-left: 5px;
+  width: 450px;
+
+  .talpay-input-label {
+    display: block;
+    float: left;
+    padding-right: 5px;
+    line-height: 34px;
+  }
+
+  #searchType {
+    width: 170px !important;
+    margin-right: 5px;
+  }
+
+  input.form-control {
+    width: 220px !important;
+  }
+
+  ::after {
+    float: left;
+    padding-right: 5px;
+  }
+
+  ::last-child {
+    clear: both;
+  }
+}
+
+.talpay-input-group.input-group
+div.debt.input-group div.input-group-addon {
+  padding: 6px 8px;
+}
+
+.v-centre-checkbox {
+  padding-top: 6px;
+  label: {
+    margin-bottom: 0px;
+  }
+}
+
+textarea#specialInstructions {
+  min-height: 80px;
+}
+
+.specialInstructionButton {
+  position: relative;
+  top: 0px;
+}
+
+.disabledText {
+  color: #d1d1d1 !important;
+}
+
+.vat-warning {
+  display: block !important;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+.option_search {
+  -moz-appearance: textfield;
+}
+
+.option_search input[type="number"]::-webkit-outer-spin-button, input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.agreementButtons {
+  padding-top: 10px;
+  padding-left: 20px;
+}
+
+.agreementCreateButtons {
+  position: absolute;
+  margin-top: 50px;
+  bottom: 5px;
+}
+
+select.form-control.ng-dirty.ng-invalid {
+  border: 2px solid $itv_pink !important;
+}
+
+input.form-control.ng-dirty.ng-invalid {
+  border: 2px solid $itv_pink !important;
+}
+
+.agreementField {
+  input {
+    display: inline-block;
+    width: 85%
+  }
+  span {
+    width: 10%;
+  }
+}
+
+.agreementDetailsView {
+  .info-text {
+    padding-top: 7px;
+  }
+}
+
+.rateCardTable {
+  width: 100%;
+  .event {
+    width: 25%;
+  }
+  .role {
+    width: 17.5%;
+  }
+  .rate {
+    width: 12%;
+  }
+  .overtimeRate {
+    width: 17%;
+  }
+  .isNegotiable {
+    width: 8%;
+  }
+  .isPensionable {
+    width: 7%;
+  }
+  .pensionBase {
+    width: 10%;
+  }
+  .isDuplicate {
+    width: 9%;
+  }
+  line-height: 25px;
+}
+
+.ng-animate.no-animate {
+  transition: 0s none;
+  -webkit-transition: 0s none;
+  animation: 0s none;
+  -webkit-animation: 0s none;
+}
+
+.rateCardViewTable {
+  width: 100%;
+
+  .event {
+    width: 30%;
+  }
+
+  .role {
+    width: 30%;
+  }
+
+  .rate {
+    width: 15%;
+    padding-right: 5%;
+  }
+
+  .overtimeRate {
+    width: 15%;
+  }
+
+  .isNegotiable {
+    width: 10%;
+  }
+  .isPensionable {
+    width: 10%;
+  }
+  .pensionBase {
+    width: 10%;
+  }
+
+  line-height: 25px;
+
+}
+
+.rateCardMultiple {
+  border: 2px solid $itv_blue;
+  margin-bottom: 10px;
+}
+
+#rate.ng-pristine.ng-invalid:not(.ng-invalid-max):not(.ng-invalid-force) {
+  border: 1px solid $itv_black_20 !important;
+}
+
+.agreementName {
+
+  #name.ng-invalidName {
+    border: 2px solid $itv_pink !important;
+  }
+
+  #name.ng-pristine.ng-invalid:not(.ng-invalidName) {
+    border: 1px solid $itv_black_20 !important;
+  }
+
+}
+
+.ng-invalid-force:not(.both-rate-role-empty) {
+  border: 2px solid $itv_pink;
+}
+
+select.form-control.ng-dirty.ng-invalid.both-rate-role-empty {
+  border: 1px solid $itv_black_20 !important;
+}
+
+a.link.editEndDateLink.disabled {
+  pointer-events: none;
+  color: grey !important;
+}
+
+#party-debt input.input-sm, input.form-control.input-sm {
+  @extend .input-general;
+  @include input-sm;
+  width: 110px;
+  height: 28px;
+}
+
+#party-debt input.input-sm-programname, input.form-control.input-sm-programname {
+  @extend .input-general;
+  @include input-sm;
+  width: 180px;
+  height: 28px;
+}
+
+.payment-edit-row {
+  margin-bottom: 4px;
+  margin-top: 0;
+  height: fit-content
+}
+
+.on-hold-note-column {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}
+
+.on-hold-note-box {
+  width: 100%;
+  height: 9em !important;
+  resize: none;
+}
+
+.payment-edit-form {
+  display: flex;
+  width: 110%;
+  flex-direction: row
+}
+
+.payment-edit-bank-details-column {
+  display: flex;
+  width: 70%;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+
+.payment-card-container {
+  display: flex;
+  width: 100%;
+  flex-direction: row
+}
+
+.payment-card-on-hold-note-column {
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+}
+
+.payment-card-bank-details-column {
+  display: flex;
+  width: 70%;
+  flex-direction: column;
+  margin-left: 3em;
+}
+
+.on-hold-note-view-box {
+  width: 100%;
+  word-wrap: break-word;
+  border: 2px solid #7fdee4;
+  padding: 1em;
+  white-space: pre-line;
+}

@@ -1,0 +1,101 @@
+@import 'variables';
+@import 'modals';
+@import '~@angular/material/theming';
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat-core();
+
+$itv-blue-palette: (
+        50: $itv_white,
+        100: $itv_blue_5,
+        200: $itv_blue_10,
+        300: $itv_blue_20,
+        400: $itv_blue_40,
+        500: $itv_white,
+        600: $itv_blue_60,
+        700: #63D9E0,
+        800: $itv_blue_80,
+        900: $itv_blue,
+        A100: $itv_white,
+        A200: #dde6f3,
+        A400: #6992c9,
+        A700: $itv_blue,
+        contrast: (
+                50: $itv_black_80,
+                100: $itv_black_80,
+                200: $itv_black_80,
+                300: $itv_black_80,
+                400: $itv_black_80,
+                500: $itv_blue_POS,
+                600: $itv_white,
+                700: $itv_white,
+                800: $itv_white,
+                900: $itv_white,
+                A100: $itv_black_80,
+                A200: $itv_black_80,
+                A400: $itv_black_80,
+                A700: $itv_white,
+        )
+);
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue.
+$candy-app-primary: mat-palette($itv-blue-palette);
+$candy-app-accent: mat-palette($mat-pink, A200, A100, A400);
+$candy-app-warn: mat-palette($mat-red);
+
+$talpay-theme-foreground: (
+        base: $warning,
+        divider: $itv_blue_POS,
+        dividers: $itv_blue_POS,
+        disabled: rgba($itv_black, 0.38),
+        disabled-button: rgba($itv_black, 0.38),
+        disabled-text: rgba($itv_black, 0.38),
+        hint-text: rgba($itv_black, 0.38),
+        secondary-text: $itv_blue_POS,
+        icon: $itv_blue_POS,
+        icons: $itv_blue_POS,
+        text: $itv_black,
+        slider-min: rgba($warning, 0.87),
+        slider-off: rgba($warning, 0.26),
+        slider-off-active: rgba($warning, 0.38),
+);
+
+$talpay-theme-background: (
+        status-bar: map_get($mat-grey, 300),
+        app-bar: map_get($mat-grey, 100),
+        background: map_get($mat-grey, 50),
+        hover: $itv_blue_20,
+        card: white,
+        dialog: white,
+        disabled-button: $black-12-opacity,
+        raised-button: white,
+        focused-button: $black-6-opacity,
+        selected-button: map_get($mat-grey, 300),
+        selected-disabled-button: map_get($mat-grey, 400),
+        disabled-button-toggle: map_get($mat-grey, 200),
+        unselected-chip: map_get($mat-grey, 300),
+        disabled-list-option: map_get($mat-grey, 200),
+);
+
+$candy-app-theme: (
+        primary: $candy-app-primary,
+        accent: $candy-app-primary,
+        warn: $candy-app-warn,
+        is-dark: false,
+        foreground: $talpay-theme-foreground,
+        background: $talpay-theme-background
+);
+
+@include angular-material-theme($candy-app-theme);
+
+@import 'tables';
+@import 'buttons';
+@import "accordions";
+@import "menus";
+@import "tooltip";
+@import "components";

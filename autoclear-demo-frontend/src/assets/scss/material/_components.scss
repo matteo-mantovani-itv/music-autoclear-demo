@@ -1,0 +1,21 @@
+@import 'variables';
+
+#UnionPcsProductSelector #pcs-episodes-search-results-num-selected {
+  text-align: right;
+  float: right;
+}
+
+#CashReceiptPcsProductSelector #pcs-episodes-search-results-num-selected {
+  text-align: left;
+  font-weight: bold;
+  float: none;
+}
+
+.flex-wrap {
+  display: flex;
+  flex-wrap: wrap;
+
+  .stretch {
+    align-items: stretch;
+  }
+}

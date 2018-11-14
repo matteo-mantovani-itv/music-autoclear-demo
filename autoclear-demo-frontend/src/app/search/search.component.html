@@ -1,0 +1,172 @@
+<div class="container">
+    <div class="row">
+        <div class="title page_title">Autoclear</div>
+    
+    
+    </div>
+
+
+    
+    <div class="col-xs-12 vertical-space-20"></div>
+    
+    <div class="row">
+        <div>
+            <div style="position:relative;">
+                <form autocomplete="off" class="form-inline" novalidate="">
+                    <div class="talpay-input-group input-group input-group-med">
+                        <label class="input-group-addon" for="isrcNumber">Search for</label>
+                        <input class="form-control"
+                               maxlength=255
+                               name='isrcNumber'
+                               id='isrcNumber'
+                               [(ngModel)]="isrcNumber"
+                               [disabled]="searchInputsDisabled()"
+                               placeholder="ISRC Number" />
+                    </div>
+
+                    <div class="form-group">
+                        <span style="position:relative;">
+                                                    <input class="form-control"
+                                                           maxlength=255
+                                                           name='loginPassword'
+                                                           id='loginPassword'
+                                                           [(ngModel)]="recordLabel"
+                                                           [disabled]="searchInputsDisabled()"
+                                                           style="width:280px;"
+                                                           placeholder="Record Label" />
+                        </span>
+                    </div>
+                    <div class="form-group pad-left-4">
+                        <button type="button"
+                                id='login-button'
+                                class='btn btn-med btn-primary btn-talpay'
+                                (click)="search()"
+                                [disabled]="searchDisabled()"
+                                tabindex='1'>
+                            <i class="glyphicon glyphicon-search fa-lg"></i> Search
+                        </button>
+                        <a (click)="reset()">reset</a>
+                    </div>
+                    <br>
+                    <div class="talpay-input-group input-group input-group-med">
+                        <label class="input-group-addon" for="bulkData">Or bulk search</label>
+                        <input id="bulkData" name="bulkData" type='file' (change)="fileChanged($event.target.files)">
+                    </div>
+                    
+                    <div class="form-group pad-left-4">
+                        <button type="button"
+                                id='login-button'
+                                class='btn btn-med btn-primary btn-talpay'
+                                (click)="searchBulk()"
+                                [disabled]="searchBulkDisabled()"
+                                
+                                tabindex='1'>
+                            <i class="glyphicon glyphicon-search fa-lg"></i> Bulk Search
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+    <div class="row" *ngIf="error">
+        no results found, try again - or manually add it <a (click)="addTrack()">here</a>
+    </div>
+
+    <div class="row">
+        <div>
+            <hr>
+        </div>
+    </div>
+    
+    <div class="row">
+        <div *ngIf="spinning" id="overlay">
+            <div class="loader"></div>
+        </div>
+        <mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+            <ng-container matColumnDef="artist">
+                <mat-header-cell *matHeaderCellDef> Artist </mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element.artist}} </mat-cell>
+            </ng-container>
+            
+            <ng-container matColumnDef="trackTitle">
+                <mat-header-cell *matHeaderCellDef> Track Title </mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element.track}} </mat-cell>
+            </ng-container>
+            
+            <ng-container matColumnDef="clear">
+                <mat-header-cell *matHeaderCellDef> Clear </mat-header-cell>
+                <mat-cell *matCellDef="let element" class="mat-cell cdk-column-clear mat-column-clear {{element.clearedCssClass}}"> 
+                    {{element.cleared}} 
+
+                    <span *ngIf="element.manual">
+                        <p>
+                            <a (click)="editManual()">edit</a>
+                        </p>
+                    </span>
+                    
+                    <span *ngIf="!element.manual">
+                        <p *ngIf="element.override">
+                            <a (click)="override()">Change</a>
+                        </p>
+    
+                        <p *ngIf="element.override">
+                            <a (click)="deleteOverride()">Delete</a>
+                        </p>
+                        
+                        <p *ngIf="!element.override">
+                            <a (click)="override()">Add</a>
+                        </p>
+                    </span>
+
+                </mat-cell>
+            </ng-container>
+            
+            <ng-container matColumnDef="composer">
+                <mat-header-cell *matHeaderCellDef> Composer(s) </mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element.composer}} </mat-cell>
+            </ng-container>
+
+            <ng-container matColumnDef="publisher">
+                <mat-header-cell *matHeaderCellDef> Publisher(s) </mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element.publisher}} </mat-cell>
+            </ng-container>
+
+            <ng-container matColumnDef="tuneCode">
+                <mat-header-cell *matHeaderCellDef> Tune code </mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element.tuneCode}} </mat-cell>
+            </ng-container>
+
+            <ng-container matColumnDef="label">
+                <mat-header-cell *matHeaderCellDef> Label </mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element.recordLabel}} </mat-cell>
+            </ng-container>
+
+            <ng-container matColumnDef="isrcNumber">
+                <mat-header-cell *matHeaderCellDef> ISRC </mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element.isrcNumber}} </mat-cell>
+            </ng-container>
+
+            <ng-container matColumnDef="copyData">
+                <mat-header-cell *matHeaderCellDef> Copy </mat-header-cell>
+                <mat-cell *matCellDef="let element"> <i style="font-size: 34px;" class="glyphicon glyphicon-duplicate fa-lg"></i>  </mat-cell>
+            </ng-container>
+            
+            <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+            <mat-row *matRowDef="let element; columns: displayedColumns;"></mat-row>
+        </mat-table>
+    </div>
+    <div class="row">
+        <div>
+            <hr>
+        </div>
+    </div>
+
+    <div class="row" style="padding-top: 60px;">
+
+        <p>choices: </p>
+        <ul>
+            <li *ngFor="let choice of choices" (click)="choiceClicked(choice)">{{choice.artist}} - {{choice.track}}</li>
+        </ul>
+    </div>
+</div>

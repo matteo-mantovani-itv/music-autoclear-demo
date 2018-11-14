@@ -1,0 +1,18 @@
+@import 'variables';
+
+button.mat-button.mat-primary {
+    background-color: $itv_blue_POS;
+    border-color: $itv_blue_POS;
+    color: $itv_white;
+    background-image: none;
+    -webkit-transition-duration: 0.15s;
+    transition-duration: 0.15s;
+
+    &:hover {
+        background-color: $itv_blue;
+    }
+}
+
+button:focus {
+    outline:0;
+}

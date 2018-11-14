@@ -1,0 +1,112 @@
+
+label.talpay-datepicker-label {
+    padding: 3px 10px;
+}
+
+bs-datepicker[bs-show] .datepicker.dropdown-menu,
+bs-datepicker[bs-show] + .datepicker.dropdown-menu,
+bs-datepicker[data-bs-show] .datepicker.dropdown-menu,
+bs-datepicker[data-bs-show] + .datepicker.dropdown-menu {
+  position: relative;
+  top: 0 !important;
+  left: 0 !important;
+}
+
+.dropdown-menu.datepicker {
+    width: 250px;
+    height: 250px;
+    z-index: 1300; // more important than dialogs
+    background-color: white;
+    padding: 0px;
+    border: 1px solid $itv_black_10;
+    button {
+        outline: none;
+        border: 0px;
+    }
+    table {
+        background-color: white;
+        thead {
+            tr{
+                background-color: $itv_black_5;
+                color:  $itv_black_60;
+                font-size: 1em;
+                font-weight: normal;
+                font-family: reemRegular;
+                border-top: 1px solid $itv_black_10;
+                border-bottom: 1px solid $itv_black_10;
+            }
+            tr:first-child{
+                background-color: $itv_blue_80;
+                color: black;
+                font-size: 1.1em;
+                font-weight: normal;
+                font-family: reemRegular;
+                border: none;
+
+                button{
+                    color: white;
+                    background-color: transparent;
+                    padding-top: 2px;
+                    padding-bottom: 2px;
+                    padding-left: 6px;
+                    padding-right: 6px;
+                }
+                button:hover{
+                    background-color: $itv_blue_60;
+                }
+            }
+        }
+        button{
+           background-color: transparent;
+           background-image: none;
+           text-shadow: none;
+           color: black;
+           strong {
+               font-weight: normal;
+               font-family: reemRegular;
+               font-size: 1.2em;
+           }
+        }
+        button:focus{
+            background-color: transparent;
+            background-image: none;
+        }
+        button:active {
+            background-color: $itv_black_10;
+            background-image: none;
+        }
+    }
+    tbody {
+        height: 180px;
+        button {
+            padding: 6px;
+            font-size: 1.1em;
+            font-weight: normal;
+            font-family: reemRegular;
+            padding: 0px;
+            height: 100%;
+            border-radius: 0px;
+
+        }
+        button.btn.btn-info.btn-today {
+            color: black;
+            background-color: $itv_blue_20;
+            border: 1px solid $itv_blue_60;
+        }
+        button.btn.btn-primary {
+            color: white;
+            background-color: $itv_blue_60;
+        }
+    }
+}
+
+.timepicker.dropdown-menu {
+  padding: 0 4px;
+}
+.timepicker.dropdown-menu button {
+  outline: none;
+  border: 0px;
+}
+.timepicker.dropdown-menu tbody button {
+  padding: 6px;
+}

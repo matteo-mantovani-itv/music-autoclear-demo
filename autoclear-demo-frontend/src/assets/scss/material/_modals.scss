@@ -1,0 +1,92 @@
+@import 'variables';
+
+.talPay-modal {
+    width: 34rem;
+}
+
+.talPay-modal .btn-talpay {
+    margin-right: 5px;
+}
+
+mat-dialog-container .modal-header {
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
+.modal-header .modal-title {
+    line-height: 1em;
+}
+
+mat-dialog-container .modal-header.alert.alert-ok .modal-title:before,
+mat-dialog-container .modal-header.alert.alert-info .modal-title:before,
+mat-dialog-container .modal-header.alert.alert-warning .modal-title:before,
+mat-dialog-container .modal-header.alert.alert-danger .modal-title:before
+{
+    position: relative;
+    top: 5px;
+    display: inline-block;
+    font-size: 1.8em;
+    letter-spacing: 13px;
+    -webkit-font-smoothing: antialiased;
+    font-family: FontAwesome;
+}
+mat-dialog-container .modal-header.alert.alert-ok .modal-title:before{
+    color: $itv_blue;
+    content: "\f00c";
+}
+
+mat-dialog-container .modal-header.alert.alert-info .modal-title:before{
+    content: "\f12A";
+    color: $itv_yellow;
+}
+mat-dialog-container .modal-header.alert.alert-warning .modal-title:before{
+    content: "\f12A";
+    color: $itv_pink;
+}
+mat-dialog-container .modal-header.alert.alert-danger .modal-title:before{
+    content: "\f12A";
+    color: $itv_pink;
+}
+
+mat-dialog-container .modal-header.alert{
+    background-color: white;
+    background-image: none;
+    border: none;
+    border-bottom: 2px solid $itv_blue_40;
+    border-radius: 0px;
+    padding: 16px 2px 16px 2px;
+    color: $itv_blue_POS;
+}
+
+mat-dialog-container h4.modal-title{
+    font-size: 1.6em;
+    color: $itv_blue_POS;
+    font-family: reemRegular;
+}
+mat-dialog-container .modal-body{
+    color: $itv_black;
+    font-size: 1.0em;
+    font-weight: normal;
+    font-family: reemRegular;
+    padding-bottom: 45px;
+}
+
+mat-dialog-container .modal-content {
+    .info-label {
+        color: $itv_blue_POS;
+        margin-bottom: 3px;
+        label {
+            font-weight: normal;
+            margin-bottom: 0px;
+        }
+    }
+    .info-text {
+        color: $itv_black;
+        font-weight: normal;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+}
+
+mat-dialog-container mat-dialog-actions {
+    border-top: 2px solid $itv_blue_40;
+}

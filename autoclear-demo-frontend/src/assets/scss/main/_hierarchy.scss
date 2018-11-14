@@ -1,0 +1,191 @@
+#manage-groups {
+    .angular-ui-tree-empty{
+      opacity: 0.01;
+    }
+    .expander {
+        color: $itv_blue_POS;
+        cursor: pointer;
+    }
+    .expander:focus {
+        outline: none;
+    }
+    .angular-ui-tree-nodes {
+        padding-left:40px;
+    }
+    .angular-ui-tree-handle {
+        cursor: pointer !important;
+        background: $itv_blue_5;
+        border: 1px solid $itv_blue;
+        color: $itv_black;
+        padding: 6px 10px;
+    }
+
+    .angular-ui-tree-handle:hover {
+        border-color: $itv_blue_POS;
+    }
+
+    .angular-ui-tree-placeholder {
+        background: #f0f9ff;
+        border: 2px dashed #bed2db;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+
+    tr.angular-ui-tree-empty {
+        height:100px
+    }
+
+    .group-title {
+        background-color: #687074 !important;
+        color: #FFF !important;
+    }
+    a.tree-node-text .underlined{
+        text-decoration:underline;
+    }
+
+    /* --- Tree --- */
+    .tree-node {
+        border: 1px solid $itv_blue_80;
+        border-radius: 8px;
+        background-color: $itv_blue_5;
+        color: $itv_blue;
+        a:hover, a:active, a:focus{
+            outline:none;
+        }
+    }
+    .tree-node.depth_0  {
+        background-color: $itv_blue_20;
+    }
+    .tree-node.depth_1  {
+        background-color: $itv_blue_10;
+    }
+    .tree-node.depth_2  {
+        background-color: $itv_blue_5;
+    }
+    .tree-handle {
+        padding: 10px;
+        background: $itv_black;
+        color: $itv_white;
+        margin-right: 10px;
+    }
+    .tree-node-content {
+        margin-left: 10px;
+        margin-right:10px;
+        margin-top: 4px;
+        margin-bottom: 4px;
+    }
+
+    .nodrop {
+        background-color: $itv_blue_10;
+    }
+
+    input.ng-invalid.ng-touched.ng-dirty:focus + div.valdr-message {
+        display: inline;
+    }
+    input.ng-invalid.ng-dirty:focus + div.valdr-message {
+        display: inline;
+    }
+    .user-list {
+        .deleted{
+            text-decoration: line-through;
+            color: $itv_black_40;
+            background-color: $itv_black_5;
+        }
+        .added{
+            text-decoration: underline;
+            color: $itv_green;
+        }
+    }
+    .user-list > thead > tr > td {
+        color:$itv_blue_POS;
+    }
+    .user-list > tbody > tr > td {
+        font-size:12px;
+    }
+
+    .user-company-flag {
+        display: inline-block;
+        min-width: 26px;
+        font-size: 0.8em;
+        background-color: $itv_blue_40;
+        border: 2px solid $itv_blue;
+        padding: 4px;
+        border-radius: 13px;
+        text-align: center;
+        margin-right: 2px;
+    }
+    .payee-search-results {
+        thead > tr {
+            border-bottom: 1px solid $itv_blue_20;
+        }
+        tfoot > tr {
+            border-top: 1px solid $itv_blue_20;
+        }
+    }
+    .panel {
+        .panel-heading {
+            background-image: none;
+            background-color: $itv_blue_10;
+        }
+
+        .panel-body.heriarchy-tree-panel {
+            padding-left:15px;
+            padding-bottom:15px;
+            padding-right:0px;
+            padding-top: 0px;
+            .tree-node-text {
+                color: $itv_blue_POS;
+                font-weight: normal;
+            }
+            .tree-node-text.selected {
+                font-weight: bold;
+            }
+            .expander {
+                font-size: 1.7em;
+                padding-bottom: 2px;
+                color: $itv_blue_POS;
+            }
+            .expander:focus{
+                outline:none;
+            }
+            .mock-expander {
+                font-size: 1.7em;
+                padding-bottom: 2px;
+                color: $itv_black_40;
+                display: none;
+            }
+            .greyed {
+                color: $itv_black_20 !important;
+            }
+        }
+        .panel-body.heriarchy-tree-panel.disabled {
+            .tree-node-text {
+                color: $itv_black_40;
+            }
+            .expander {
+               display: none;
+            }
+            .mock-expander {
+               display:inline-block;
+               opacity: 0.5;
+            }
+        }
+    }
+    .payee-search-results {
+        position: absolute;
+        top: 131px;
+        left: 120px;
+        min-width:240px;
+        table {
+            tr.disabled {
+                color:$itv_black_40;
+            }
+        }
+    }
+
+
+    .table.no-bottom-margin {
+        margin-bottom: 0px;
+    }
+}

@@ -1,0 +1,62 @@
+
+#manage-reports {
+    .panel {
+        border: 1px solid $itv_blue_60;
+
+        .panel-heading {
+            display: inline-block;
+            font-weight: 600;
+            font-size: 1.1em;
+            width: 100%;
+            background: linear-gradient(to right, $itv_blue_20 0%, $itv_white 100%);
+            border-bottom: 1px solid $itv_blue_60;
+            border-top-right-radius: 4px;
+            border-top-left-radius: 4px;
+            padding:8px;
+        }
+        .report-title {
+            font-size: 1.1em;
+            color: $itv_blue_POS;
+        }
+        .expander {
+            font-size: 1.7em;
+            padding-bottom: 2px;
+            color: $itv_blue_POS;
+        }
+        .expander:focus{
+            outline:none;
+        }
+        .expander:hover{
+            cursor:pointer;
+        }
+    }
+
+    .report-form {
+        border: 1px solid $itv_blue_60;
+        border-top-right-radius: 4px;
+        border-top-left-radius: 4px;
+        .header {
+            display: inline-block;
+            font-weight: 600;
+            font-size: 1.1em;
+            width: 100%;
+            background: linear-gradient(to right, $itv_blue_20 0%, $itv_white 100%);
+            border-bottom: 1px solid $itv_blue_60;
+            border-top-right-radius: 4px;
+            border-top-left-radius: 4px;
+            padding:8px;
+            .title {
+                margin-top: 0;
+                margin-bottom: 0;
+                font-size: 16px;
+                font-weight:normal;
+                color: inherit;
+            }
+        }
+    }
+
+
+}
+.panel-heading,.report-form .header {
+
+}

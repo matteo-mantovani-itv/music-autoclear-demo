@@ -1,0 +1,450 @@
+.red-circle{
+    background: url('assets/images/red-circle.jpg');
+}
+.btn-sm {
+    white-space: normal;
+}
+.btn {
+    white-space: normal;
+}
+
+button.btn.fake-disabled{
+    cursor: not-allowed;
+    filter: alpha(opacity=65);
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    opacity: .65;
+}
+
+button.btn-talpay:active,button.btn-talpay:focus {
+    outline:0 !important;
+}
+button.btn-primary.btn-talpay,span.btn-primary.btn-talpay {
+    background-color: $itv_blue_POS;
+    border-color: $itv_blue_80;
+    color: $itv_white;
+}
+button.btn-primary.btn-talpay:hover,span.btn-primary.btn-talpay:hover{
+    background-color: $itv_blue;
+}
+button.btn-primary.btn-talpay:active, button.btn-primary.btn-talpay:focus,
+span.btn-primary.btn-talpay:active, span.btn-primary.btn-talpay:focus
+{
+    background-color: $itv_blue;
+    color: $itv_blue_10;
+    border-color: $itv_blue_80;
+}
+button.btn-primary.btn-talpay.disabled,
+span.btn-primary.btn-talpay.disabled{
+    background-color: $itv_black_20;
+    color: $itv_white;
+}
+button.btn.btn-talpay,span.btn.btn-talpay {
+    border-radius:20px;
+    font-family: reemRegular;
+    text-shadow: none;
+    background-image: none;
+    -webkit-transition-duration: 0.15s;
+    transition-duration: 0.15s;
+    -webkit-transition-property: background-color, transform, box-shadow;
+    transition-property: background-color, transform,box-shadow;
+    white-space: nowrap;
+}
+button.btn-default.btn-talpay,span.btn-default.btn-talpay {
+    background-image: none;
+    background-color: $itv_blue_5;
+    border-color: $itv_black_20;
+    color: $itv_black;
+}
+button.btn.btn-talpay.btn-quick,span.btn.btn-talpay.btn-quick,input.btn-quick {
+    -webkit-transition-duration: 0s;
+    transition-duration: 0s;
+}
+
+button.btn-default.btn-talpay:hover,span.btn-default.btn-talpay:hover{
+    background-color: $itv_blue_40;
+    border-color: $itv_blue_80;
+}
+button.btn-default.btn-talpay:active, button.btn-default.btn-talpay:focus,
+span.btn-default.btn-talpay:active, span.btn-default.btn-talpay:focus
+{
+    background-color: $itv_blue;
+    color: $itv_blue_10;
+    border-color: $itv_blue_80;
+    background-image: none;
+}
+button.btn-default.btn-talpay.disabled,span.btn-default.btn-talpay.disabled{
+    background-color: $itv_white;
+    color: $itv_black_20;
+    border-color: $itv_black_20;
+}
+button.btn-talpay.btn-sm,span.btn-talpay.btn-sm {
+    min-width: 80px;
+}
+button.btn-talpay.btn-med,span.btn-talpay.btn-med {
+    min-width: 100px;
+}
+
+.btn-circle {
+    width: 48px;
+    height: 48px;
+    border-radius: 24px;
+    text-align: center;
+    padding: 0px 0px 0px 0px;
+    margin: 0px 0px 0px 0px;
+    font-size: 2.55em;
+    font-weight: normal;
+    font-family: reemRegular;
+    font-weight: bold;
+    background-color: $itv_blue;
+    color: white;
+}
+.btn-circle span{
+    position: relative;
+    top: -2px;
+}
+.btn-circle span.smaller{
+    position: relative;
+    top: -1px;
+    font-size: 24px;
+}
+
+.btn-circle.active {
+    background-color: $itv_blue;
+    color: whitesmoke;
+    opacity: 1.0;
+}
+.btn-circle.disabled {
+    color: grey;
+    background-color: $itv_blue;
+    opacity: 0.5;
+}
+.btn-circle.greyed {
+    background-color: lightgray;
+}
+
+.btn-circle:hover {
+    color: white !important;
+    opacity: 1.0;
+}
+.btn-circle:focus{
+    outline:0 !important;
+/*    border: 2px solid black;
+    color: #f5f525 !important;     */
+}
+
+.btn-oval {
+    width: 80px;
+    height: 28px;
+    text-align: center;
+    padding: 3px 0;
+    border-radius: 14px;
+    font-size: 13px;
+    color: black;
+}
+
+.btn-oval:active, .btn-oval:focus{
+    border-color:$itv_blue;
+}
+
+.btn-oval i {
+  color: $itv_black_40;
+}
+
+.btn-oval:focus {
+  outline: 0 !important;
+}
+
+.talpay-button-group {
+    border-top: 1px solid $itv_blue_60;
+    margin-top: 8px;
+    padding-top: 8px;
+    padding-bottom: 6px;
+    float: left;
+    width: 100%;
+}
+.talpay-button-group.inset button:first-child{
+    margin-left: 10px;
+}
+
+.talpay-button-group button{
+    margin-right:6px;
+}
+
+.workgroup-search-token {
+    display:block;
+    .search-token{
+        .searchToken {
+            margin-top:0px;
+            height:28px;
+        }
+    }
+}
+
+.searchToken {
+    .hidden {
+        display:none;
+    }
+    background: $itv_blue_20;
+    border: 1px solid $itv_blue_40;
+    border-radius: 2px;
+    color: #1e2d4c;
+    cursor: default;
+    display: inline-block;
+    margin: 0px;
+    padding-top: 4px;
+    padding-bottom: 0px;
+    padding-left: 8px;
+    padding-right: 8px;
+    white-space: nowrap;
+    .searchTokenCriteriaText {
+        font-weight: bold;
+        padding-right: 4px;
+    }
+    .searchTokenText {
+        display: inline-block;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    .remove {
+       left: 1px;
+       margin: 0;
+       outline: none;
+       position: relative;
+       top: 2px;
+   }
+    .closeButton{
+        height: 11px;
+        margin-top: 1px;
+        width: 16px;
+        vertical-align: top;
+        padding-left: 4px;
+        padding-right: 4px;
+    }
+}
+
+.pcs-search-token {
+    .searchToken{
+     white-space: pre-line;
+     max-width: 100%;
+    }
+     .searchTokenText {
+       max-width: 97%;
+    }
+}
+
+.ball_0{
+    background-color:$itv_blue;
+}
+.ball_1{
+    background-color:$itv_yellow;
+}
+.ball_2{
+    background-color:$itv_pink;
+}
+.ball_3{
+    background-color:$itv_green;
+}
+.ball_4{
+    background-color:$itv_black;
+}
+label.talpay-datepicker-label {
+    background-image: none;
+    background-color: #aee9ed;
+    color: #424242;
+}
+
+button.btn.btn-big-circle {
+    width: 118px;
+    height: 118px;
+    border-radius: 50%;
+    margin:5px;
+    box-shadow:  7px 7px 10px rgba(0,0,0,.8);
+}
+button.btn.btn-big-circle.disabled {
+    box-shadow: none;
+    cursor:default;
+}
+button.btn.btn-big-circle.hvr-grow {
+    -webkit-transition: all 0.15s ease-in-out;
+    transition: all 0.15s ease-in-out;
+}
+button.btn.btn-big-circle span{
+    font-size: 14px;
+    font-weight: 500;
+    color:white;
+    text-shadow: 2px 1px 0px rgba(12, 12, 12, 0.75);
+}
+button.btn.btn-big-circle.hvr-grow:hover {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+    box-shadow: 12px 12px 17px rgba(0, 0, 0, 0.65);
+}
+button.btn.btn-big-circle:active,button.btn.btn-big-circle:focus {
+    outline: none;
+}
+.hvr-grow {
+    display: inline-block;
+    vertical-align: middle;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    -webkit-transition-property: transform;
+    transition-property: transform;
+}
+.hvr-grow:hover, .hvr-grow:focus, .hvr-grow:active {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+}
+.hvr-grow-big {
+    display: inline-block;
+    vertical-align: middle;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    -webkit-transition-property: background-color, transform;
+    transition-property: background-color, transform;
+}
+
+.hvr-grow-big:focus {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+}
+.hvr-grow-big:hover,.hvr-grow-big:hover.hvr-grow-big:focus{
+    -webkit-transform: scale(1.3);
+    transform: scale(1.3);
+}
+
+/* Buzz Out */
+@-webkit-keyframes hvr-buzz-out {
+    10% {
+        -webkit-transform: translateX(3px) rotate(2deg);
+        transform: translateX(3px) rotate(2deg);
+    }
+
+    20% {
+        -webkit-transform: translateX(-3px) rotate(-2deg);
+        transform: translateX(-3px) rotate(-2deg);
+    }
+
+    30% {
+        -webkit-transform: translateX(3px) rotate(2deg);
+        transform: translateX(3px) rotate(2deg);
+    }
+
+    40% {
+        -webkit-transform: translateX(-3px) rotate(-2deg);
+        transform: translateX(-3px) rotate(-2deg);
+    }
+
+    50% {
+        -webkit-transform: translateX(2px) rotate(1deg);
+        transform: translateX(2px) rotate(1deg);
+    }
+
+    60% {
+        -webkit-transform: translateX(-2px) rotate(-1deg);
+        transform: translateX(-2px) rotate(-1deg);
+    }
+
+    70% {
+        -webkit-transform: translateX(2px) rotate(1deg);
+        transform: translateX(2px) rotate(1deg);
+    }
+
+    80% {
+        -webkit-transform: translateX(-2px) rotate(-1deg);
+        transform: translateX(-2px) rotate(-1deg);
+    }
+
+    90% {
+        -webkit-transform: translateX(1px) rotate(0);
+        transform: translateX(1px) rotate(0);
+    }
+
+    100% {
+        -webkit-transform: translateX(-1px) rotate(0);
+        transform: translateX(-1px) rotate(0);
+    }
+}
+
+@keyframes hvr-buzz-out {
+    10% {
+        -webkit-transform: translateX(3px) rotate(2deg);
+        transform: translateX(3px) rotate(2deg);
+    }
+
+    20% {
+        -webkit-transform: translateX(-3px) rotate(-2deg);
+        transform: translateX(-3px) rotate(-2deg);
+    }
+
+    30% {
+        -webkit-transform: translateX(3px) rotate(2deg);
+        transform: translateX(3px) rotate(2deg);
+    }
+
+    40% {
+        -webkit-transform: translateX(-3px) rotate(-2deg);
+        transform: translateX(-3px) rotate(-2deg);
+    }
+
+    50% {
+        -webkit-transform: translateX(2px) rotate(1deg);
+        transform: translateX(2px) rotate(1deg);
+    }
+
+    60% {
+        -webkit-transform: translateX(-2px) rotate(-1deg);
+        transform: translateX(-2px) rotate(-1deg);
+    }
+
+    70% {
+        -webkit-transform: translateX(2px) rotate(1deg);
+        transform: translateX(2px) rotate(1deg);
+    }
+
+    80% {
+        -webkit-transform: translateX(-2px) rotate(-1deg);
+        transform: translateX(-2px) rotate(-1deg);
+    }
+
+    90% {
+        -webkit-transform: translateX(1px) rotate(0);
+        transform: translateX(1px) rotate(0);
+    }
+
+    100% {
+        -webkit-transform: translateX(-1px) rotate(0);
+        transform: translateX(-1px) rotate(0);
+    }
+}
+
+.hvr-buzz-out {
+    display: inline-block;
+    vertical-align: middle;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -moz-osx-font-smoothing: grayscale;
+}
+.hvr-buzz-out-clicked {
+    -webkit-animation-name: hvr-buzz-out;
+    animation-name: hvr-buzz-out;
+    -webkit-animation-duration: 0.75s;
+    animation-duration: 0.75s;
+    -webkit-animation-timing-function: linear;
+    animation-timing-function: linear;
+    -webkit-animation-iteration-count: 1;
+    animation-iteration-count: 1;
+}

@@ -1,0 +1,47 @@
+@import 'variables';
+
+mat-expansion-panel-header {
+  font-family: reemRegular;
+  font-size: 15px;
+  font-weight: 400;
+  border-bottom:  none;
+}
+
+.mat-expansion-panel {
+  background: linear-gradient(to right, $itv_blue_20 0%, $itv_white 100%);
+}
+
+.mat-expansion-panel-content {
+  background: $itv_white;
+}
+
+.mat-expansion-panel-header-description {
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.mat-expansion-panel-header {
+  font-weight: bold;
+  padding: 8px !important;
+}
+
+.mat-expansion-panel-header-description .talpay-chevron {
+  font-size: 1.7em;
+}
+
+.mat-expansion-panel:not(.mat-expanded) .mat-expansion-panel-header:not([aria-disabled='true']).cdk-keyboard-focused, .mat-expansion-panel:not(.mat-expanded) .mat-expansion-panel-header:not([aria-disabled='true']).cdk-program-focused, .mat-expansion-panel:not(.mat-expanded) .mat-expansion-panel-header:not([aria-disabled='true']):hover {
+  background: linear-gradient(to right, $itv_blue_20 0%, $itv_white 100%);
+}
+
+.mat-expansion-panel:not([class*=mat-elevation-z]) {
+  box-shadow: none !important;
+  border: 1px solid $itv_blue;
+}
+
+.mat-expansion-panel-body {
+  padding: 8px !important;
+}
+
+.mat-expansion-panel-header.mat-expanded {
+  border-bottom: 1px solid $itv_blue;
+}

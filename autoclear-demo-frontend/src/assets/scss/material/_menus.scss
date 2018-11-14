@@ -1,0 +1,25 @@
+@import "variables";
+
+.mat-menu-content {
+  padding-top: 0 !important;;
+  padding-bottom: 0 !important;;
+  background-color: $itv_blue_20;
+}
+
+.mat-menu-item {
+  font-family: reemRegular;
+  font-size: 14px;
+  font-weight: normal;
+}
+
+.mat-dialog-title {
+  font-family: reemRegular;
+  font-size: 1.20em;
+  font-weight: normal;
+}
+
+.mat-menu-item:hover:not([disabled]),
+.mat-menu-item:focus:not([disabled]),
+.mat-menu-item-highlighted:not([disabled]) {
+  background: $itv_blue_10;
+}

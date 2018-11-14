@@ -1,0 +1,19 @@
+.pagination.talpay-pagination {
+     > li > a,> li > span
+    {
+        color: $itv_blue;
+    }
+}
+.pagination.talpay-pagination {
+    > li.disabled > a {
+        color: $itv_black_10;
+        &:focus,&:hover {
+            color: $itv_black_10;
+        }
+    }
+    > li > a:hover,  > li > span:hover,  > li > a:focus,  > li > span:focus
+    {
+        color: $itv_blue_POS;
+        background-color: $itv_white;
+    }
+}

@@ -1,0 +1,96 @@
+
+.menu {
+  list-style: none;
+  border-bottom: 0.1em solid black;
+  margin-bottom: 2em;
+  padding: 0 0 0.5em;
+}
+
+.menu:before {
+  content: "[";
+}
+
+.menu:after {
+  content: "]";
+}
+
+.menu > li {
+  display: inline;
+}
+
+.menu > li:before {
+  content: "|";
+  padding-right: 0.3em;
+}
+
+.menu > li:nth-child(1):before {
+  content: "";
+  padding: 0;
+}
+
+.dropdown.payment-dropdown {
+    position: inherit;
+    padding-right: 0px;
+}
+.payment-dropdown .dropdown-menu > li > a:hover, .payment-dropdown.dropdown-menu > li > a:focus {
+    background-image: none;
+    background-color: $itv_blue_10;
+}
+.dropdown.payment-dropdown {
+    ul {
+       margin-left:32px;
+       margin-top:16px;
+    }
+    .dropdown-menu {
+        background-color: $itv_blue_20;
+        li:hover {
+            background-color: $itv_blue_10;
+        }
+    }
+    .dropdown-menu > li > a {
+        padding-top: 0px;
+        padding-bottom: 0px;
+        cursor: pointer;
+    }
+    .dropdown-menu > li > span {
+        display: block;
+        padding: 0px 20px;
+        clear: both;
+        white-space: nowrap;
+    }
+    .dropdown-menu > li > span.disabled {
+        color: $itv_black_40;
+    }
+    button.dropdown-toggle,span.dropdown-toggle {
+        height: 21px;
+        width: 21px;
+        background-color: white;
+        border-radius: 50%;
+        border: 1px solid #46D3DB;
+    }
+    button.dropdown-toggle:hover,button.dropdown-toggle:active,button.dropdown-toggle:focus,
+    span.dropdown-toggle:hover,span.dropdown-toggle:active,span.dropdown-toggle:focus
+    {
+        i {
+            transition: all 0.3s;
+            -ms-transform: rotate(-90deg); /* IE 9 */
+            -webkit-transform: rotate(-90deg); /* Chrome, Safari, Opera */
+            transform: rotate(-90deg);
+        }
+        color: #333;
+        background-color: $itv_white;
+    }
+}
+li > a.verticalTabDisabled {
+    cursor: not-allowed !important;
+    color: grey !important;
+}
+
+li > a.verticalTabDisabled:active {
+	pointer-events: none;
+}
+
+.rotating-icon {
+    vertical-align: middle;
+    line-height: inherit;
+}

@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+    <changeSet id="1" author="codahale">
+        <createTable tableName="music_access">
+            <column name="id" type="bigint" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="isrcNumber" type="varchar(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="recordLabel" type="varchar(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="tuneCode" type="varchar(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="composer" type="varchar(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="publisher" type="varchar(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="artist" type="varchar(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="track" type="varchar(255)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+
+        <addUniqueConstraint
+                columnNames="isrcNumber, recordLabel"
+                constraintName="isrc_label"
+                tableName="music_access"
+        />
+    </changeSet>
+
+    <changeSet id="2" author="codahale">
+        <addColumn tableName="music_access">
+            <column name="cleared" type="varchar(255)"/>
+        </addColumn>
+        <addColumn tableName="music_access">
+            <column name="clearedCssClass" type="varchar(255)"/>
+        </addColumn>
+    </changeSet>
+
+    <changeSet id="3" author="codahale">
+        <renameColumn newColumnName="cleared_css_class"
+                      oldColumnName="clearedCssClass"
+                      tableName="music_access"/>
+        <renameColumn newColumnName="tunecode"
+                      oldColumnName="tuneCode"
+                      tableName="music_access"/>
+        <renameColumn newColumnName="isrc_number"
+                      oldColumnName="isrcNumber"
+                      tableName="music_access"/>
+        <renameColumn newColumnName="record_label"
+                      oldColumnName="recordLabel"
+                      tableName="music_access"/>
+    </changeSet>
+
+    <changeSet author="liquibase-docs" id="4">
+        <dropColumn columnName="cleared_css_class"
+                    tableName="music_access"/>
+    </changeSet>
+
+    <changeSet id="5" author="codahale">
+        <createTable tableName="override">
+            <column name="id" type="bigint" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="tuneCode" type="varchar(255)">
+                <constraints unique="true"/>
+            </column>
+            <column name="cleared" type="varchar(255)">
+            </column>
+        </createTable>
+    </changeSet>
+
+    <changeSet id="6" author="codahale">
+        <renameColumn newColumnName="tunecode"
+                      oldColumnName="tuneCode"
+                      tableName="override"/>
+    </changeSet>
+
+    <changeSet id="7" author="jhipster">
+        <createSequence sequenceName="override_seq" startValue="1" incrementBy="1"/>
+    </changeSet>
+    <changeSet id="8" author="jhipster">
+        <createSequence sequenceName="manual_seq" startValue="1" incrementBy="1"/>
+    </changeSet>
+</databaseChangeLog>

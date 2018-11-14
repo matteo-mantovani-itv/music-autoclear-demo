@@ -1,0 +1,92 @@
+<header class="header">
+    <nav class="navbar navbar-default navbar-fixed-top" id="headerSiteWide" bs-navbar="">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <div class="header-triangle ng-scope header-triangle-test">
+                    <div class="environment ng-binding">T1</div>
+                </div><!-- end ngIf: header.environment == "dev" || header.environment == "test" -->
+                <a href="" class="navbar-brand hvr-grow-big" tabindex="0">
+                    <img title="Home page" alt="ITV" class="svg" src="./assets/images/ITV_logo_2013.svg" style="width:55px;">
+                </a>
+            </div>
+            <div class="navbar-collapse collapse">
+                <p class="navbar-text navbar-left navbar-title lead">
+                    <a href="" class="link white" tabindex="0">
+                        <strong>Music AutoClear</strong>
+                    </a>
+                </p>
+                <ul class="nav navbar-nav header-menu">
+                    <li data-html="true" bs-dropdown="header.party_dropdown" data-animation="am-flip-x" aria-haspopup="true" aria-expanded="false">
+                        <a href="https://www.silvermouse.com/" target="_blank" id="partyDropdown">Silver Mouse</a>
+                    </li>
+
+                    <li data-html="true" bs-dropdown="header.party_dropdown" data-animation="am-flip-x" aria-haspopup="true" aria-expanded="false">
+                        <a href="http://repsearch.ppluk.com/ars/faces/pages/audioSearch.jspx" target="_blank" id="partyDropdown">PPL</a>
+                    </li>
+
+                    <li data-html="true" bs-dropdown="header.party_dropdown" data-animation="am-flip-x" aria-haspopup="true" aria-expanded="false">
+                        <a href="https://web.ilikemusic.com/" target="_blank" id="partyDropdown">ITV Hub</a>
+                    </li>
+                </ul>
+                <p *ngIf="isLoggedIn()" class="navbar-right navbar-right-block text-right ng-scope" style="margin-right: 4px;">
+                    <span name="headerUserName" class="padding-right-30 ng-binding">
+                        Welcome {{getUsername()}}
+                    </span>
+                    <button id="logoutButton" class="btn btn-oval" (click)="logout()">
+                        <i class="fa fa-lock"></i>&nbsp;Logout
+                    </button>
+                </p>
+                <p *ngIf="!isLoggedIn()" class="navbar-right navbar-right-block text-right ng-scope" style="margin-right: 4px;">
+                    <span name="headerUserName" class="padding-right-30 ng-binding">
+                        Logged out
+                    </span>
+                </p>
+            </div>
+        </div>
+    </nav>
+
+</header>
+
+
+<div class="container-fluid wrap">
+    <div class="content" style="padding-top: 80px;">
+    </div>
+    <div id="logo" class="background-image-holder">
+        <div class="background-image" ng-class="{off: (home.ready_ticks < 10)}" style=""></div>
+    </div>
+    <canvas id="backgroundSnowCanvas" style="position:fixed;width:100%;height:100%;z-index:-100;"></canvas>
+    <router-outlet></router-outlet>
+</div>
+    
+<footer class="footer">
+    <nav class="navbar navbar-default navbar-fixed-bottom" id="footerSiteWide" bs-navbar="">
+        <div class="container-fluid">
+            <div class="navbar-collapse collapse">
+                <span class="navbar-left navbar-text">
+                    AutoClear Version
+                    <span data-html="true" 
+                          data-trigger="hover" 
+                          data-type="success" 
+                          data-title="Build number: 1933<br/>Build date/time: 31/10/2018 18:12<br/>Source version: 7c4fe9d" 
+                          bs-tooltip="">
+                        6.5.0-S22-SNAPSHOT (1933)
+                    </span>
+                </span>
+                <span class="navbar-left navbar-text">
+                    © ITV plc. All Rights Reserved 
+                </span>
+                <span class="navbar-right navbar-text" style="margin-right:4px; display: none;">
+                    <a tabindex="100" ng-click="fc.onContactUs()">
+                        Contact Us
+                    </a>
+                    <span class="vline">|</span>
+                    <a tabindex="100" ng-click="fc.onCookiePolicy()">Cookie Policy</a>
+                    <span class="vline">|</span>
+                    <a tabindex="100" ng-click="fc.onPrivacyPolicy()">Privacy Policy</a>
+                    <span class="vline">|</span>
+                    <a tabindex="100" ng-click="fc.onTandC()">Trading Terms &amp; Conditions</a>
+                </span>
+            </div>
+        </div>
+    </nav>
+</footer>

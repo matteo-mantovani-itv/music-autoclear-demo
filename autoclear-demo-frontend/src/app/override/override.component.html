@@ -1,0 +1,124 @@
+<div class='row' *ngIf="saved">
+    Successfully saved!
+</div>
+
+<div class="row" *ngIf="resultCopy">
+    <div>
+        <div style="position:relative;">
+            <form autocomplete="off" class="form-inline" novalidate="">
+                <div class="talpay-input-group input-group input-group-med">
+                    <label class="input-group-addon" for="track">Track Title</label>
+                    <input class="form-control"
+                           maxlength=255
+                           name='track'
+                           id='track'
+                           [(ngModel)]="resultCopy.track"
+                           disabled="disabled"
+                           />
+                </div>
+                
+                <br/>
+
+                <div class="talpay-input-group input-group input-group-med">
+                    <label class="input-group-addon" for="artist">Artist</label>
+                    <input class="form-control"
+                           maxlength=255
+                           name='artist'
+                           id='artist'
+                           [(ngModel)]="resultCopy.artist"
+                           disabled="disabled"
+                    />
+                </div>
+                
+                <br/>
+
+                <div class="talpay-input-group input-group input-group-med">
+                    <label class="input-group-addon" for="clear">Clear</label>
+                    <select [(ngModel)]='resultCopy.cleared' class='form-control' id="clear" name="clear">
+                        <option [value]="option" *ngFor="let option of clearedOptions">{{option}}</option>
+                    </select>
+                </div>
+
+                <br/>
+
+                <div class="talpay-input-group input-group input-group-med">
+                    <label class="input-group-addon" for="clear">Composer(s)</label>
+                    <input class="form-control"
+                           maxlength=255
+                           name='composer'
+                           id='composer'
+                           disabled="disabled"
+                           [(ngModel)]="resultCopy.composer"
+                    />
+                </div>
+
+                <br/>
+
+                <div class="talpay-input-group input-group input-group-med">
+                    <label class="input-group-addon" for="publisher">Publisher(s)</label>
+                    <input class="form-control"
+                           maxlength=255
+                           name='publisher'
+                           id='publisher'
+                           disabled="disabled"
+                           [(ngModel)]="resultCopy.publisher"
+                    />
+                </div>
+
+                <br/>
+
+                <div class="talpay-input-group input-group input-group-med">
+                    <label class="input-group-addon" for="tuneCode">Tune code</label>
+                    <input class="form-control"
+                           maxlength=255
+                           name='tuneCode'
+                           id='tuneCode'
+                           disabled="disabled"
+                           [(ngModel)]="resultCopy.tuneCode"
+                    />
+                </div>
+
+                <br/>
+
+                <div class="talpay-input-group input-group input-group-med">
+                    <label class="input-group-addon" for="isrc">ISRC number</label>
+                    <input class="form-control"
+                           maxlength=255
+                           name='isrc'
+                           id='isrc'
+                           disabled="disabled"
+                           [(ngModel)]="resultCopy.isrcNumber"
+                    />
+                </div>
+
+                <br/>
+
+                <div class="talpay-input-group input-group input-group-med">
+                    <label class="input-group-addon" for="record">Record Label</label>
+                    <input class="form-control"
+                           maxlength=255
+                           name='record'
+                           id='record'
+                           disabled="disabled"
+                           [(ngModel)]="resultCopy.recordLabel"
+                    />
+                </div>
+
+                <br/>                
+                
+                
+                <div class="form-group pad-left-4">
+                    <button type="button"
+                            id='login-button'
+                            class='btn btn-med btn-primary btn-talpay'
+                            (click)="save()"
+                            [disabled]="!isChanged()"
+                            tabindex='1'>
+                        <i class="glyphicon glyphicon-save fa-lg"></i> Save
+                    </button>
+                    <a (click)="cancel()">cancel</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

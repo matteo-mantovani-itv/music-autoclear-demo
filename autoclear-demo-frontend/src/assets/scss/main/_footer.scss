@@ -1,0 +1,30 @@
+.footer .navbar {
+    min-height: 26px;
+    background-color: black;
+    background-image: none;
+}
+.footer .navbar-text {
+    color: $itv_white;
+    padding-top: 2px;
+    margin-top: 4px;
+    margin-bottom: 4px;
+}
+.footer .navbar-btn {
+    background-color: black;
+    margin-top: 4px;
+    margin-bottom: 4px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+}
+.footer .vline{
+    padding-left: 8px;
+    padding-right: 8px;
+}
+.footer a {
+    color: $itv_white;
+}
+.footer a:hover, .footer a:focus {
+    color: $itv_blue;
+    text-decoration: none;
+}
+ 

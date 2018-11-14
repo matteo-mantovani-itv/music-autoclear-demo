@@ -1,0 +1,167 @@
+a.navbar-brand:focus {
+    outline: none;
+}
+.nav-primary__path {
+    fill: $itv_white;
+}
+a .nav-primary__path:hover {
+    fill:$itv_blue_POS;
+}
+.header-action-count{
+    background-color: #bd2073;
+    text-align: center;
+    color: white;
+    position: absolute;
+    margin-left: 4px;
+    margin-top: -13px;
+    width: 22px;
+    height: 22px;
+    padding-top: 4px;
+    border: 2px solid rgba(255,255,255,0.4);
+    border-radius: 20px;
+    overflow: hidden;
+    z-index: 3;
+    font-size: 0.6em;
+}
+.header {
+    .navbar {
+        min-height: 52px;
+        background-image: none;
+        background: #45484d; /* Old browsers */
+        background: -moz-linear-gradient(top, #45484d 0%, #000000 100%); /* FF3.6-15 */
+        background: -webkit-linear-gradient(top, #45484d 0%,#000000 100%); /* Chrome10-25,Safari5.1-6 */
+        background: linear-gradient(to bottom, #45484d 0%,#000000 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#45484d', endColorstr='#000000',GradientType=0 );
+
+        .navbar-brand {
+            padding-top: 12px;
+            padding-bottom: 12px;
+            cursor: pointer;
+        }
+        a   {
+            background-image: none;
+            color: white;
+            -webkit-transition-duration: 0.15s;
+            transition-duration: 0.15s;
+            -webkit-transition-property: all;
+            transition-property: all;
+        }
+        a:hover{
+            color: $itv_blue;
+        }
+        a:focus{
+            outline: none;
+        }
+        .navbar-text {
+            color: white;
+        }
+        .navbar-header{
+            padding-top: 0px;
+            padding-left: 35px;
+        }
+        .navbar-title{
+            margin-top: 8px;
+            margin-bottom: 8px;
+            font-size: 28px;
+            color: white;
+        }
+        .navbar-home {
+            font-size: 2em;
+            vertical-align: middle;
+            padding-right: 8px;
+            cursor: pointer;
+       }
+        ul.navbar-nav {
+            padding-top: 2px;
+        }
+
+        .header-menu {
+            li {
+               a {
+                   color: $itv_white;
+               }
+               a:hover {
+                   color: $itv_blue;
+               }
+            }
+            ul.dropdown-menu{
+                background-color: $itv_white;
+                color: $itv_black;
+                margin-top: -6px;
+                margin-left: 14px;
+                border-color: $itv_white;
+                li{
+                    background-color: $itv_white;
+                    a {
+                        padding-left:14px;
+                        padding-right:14px;
+                        color: $itv_black;
+                        i {
+                            padding-right: 10px;
+                            color: $itv_blue_POS;
+                        }
+                    }
+                    a:hover, a:focus{
+                        background-color: $itv_white;
+                        color: $itv_blue;
+                        background-image: none;
+                    }
+                }
+            }
+            ul.dropdown-menu:focus{
+                outline:none;
+            }
+        }
+
+    }
+    .navbar-right-block {
+        padding-top: 14px;
+        color: white;
+    }
+}
+.header .navbar ul li.active a{
+    color: $itv_white;
+}
+.header .navbar ul li.active a:hover{
+    color: $itv_blue;
+}
+.header .navbar ul li.active a:focus{
+    color: $itv_blue;
+}
+
+.header .navbar ul li a:hover,.header .navbar ul li a:focus{
+    color: $itv_blue;
+}
+.header .navbar-right-block {
+    padding-top: 14px;
+    color: white;
+}
+.header .dropdown-menu {
+    background-color: darkslategray;
+    color: white;
+}
+
+
+.header-triangle {
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    min-height: 38px;
+    min-width: 38px;
+}
+.header-triangle-test {
+    background-image: url('assets/images/Triangle1.png');
+    background-repeat: no-repeat;
+    float: left;
+}
+.header-triangle-dev {
+    background-image: url('assets/images/Triangle2.png');
+    background-repeat: no-repeat;
+    float: left;
+}
+.header-triangle .environment {
+    padding-left: 3px;
+    z-index: -1;
+    overflow: hidden;
+    font-weight:bold;
+}
